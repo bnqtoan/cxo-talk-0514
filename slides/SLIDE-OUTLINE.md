@@ -6,7 +6,10 @@ status: draft-for-review
 created: 2026-05-11
 duration: 20 min on stage (pre-talk setup happens earlier in the 2-hr session)
 target_count: 12 slides — cover · setup (pre-slot) · 1 hook · 2 hammer · 3 five-nail-shaped · 4 gate · 4b use-case menu · 5 use-case→environment · 6 five-surfaces+4-elements · 7 demo · 8 close · thank-you
-build_status: slides.html BUILT (12 slides, brand palette + dark gradient covers, Esc grid + S toggle). Images: 8 placeholders, generated via Codex (in progress). Example files: examples/example-1 + example-2 (Path B demo). Open: Gist+QR, contact line, deploy.
+build_status: >
+  DONE. slides.html (12 slides, brand palette + dark gradient covers, Esc grid + S toggle). 7 Codex images generated (slides 1,2,3,5,8 wired; 4 & 6 kept as HTML for legibility — gate-card + five-surfaces PNGs sit in images/ as optional alternates). Examples: examples/example-1 (❌ sửa quy trình) + example-2 (✅ dựng môi trường), linked on slide 7. Prompt: no Gist — repo file via amy short link.
+deployed: https://bnqtoan.github.io/cxo-talk-0514/slides/slides.html · repo github.com/bnqtoan/cxo-talk-0514 · prompt go.bnqtoan.workers.dev/dinh-vande · QR go.bnqtoan.workers.dev/qr/dinh-vande (embedded live in deck)
+open_items: run the phone prompt once yourself (sanity check; examples are backup). That's it.
 reference_deck: workshops/workshop-20260504-ai-orchestration-product-team/session-1/slides.html
 brand: Anthropic / Claude brand guidelines (session-1 deck already encodes it)
 design_principles:
