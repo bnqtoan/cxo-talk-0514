@@ -280,6 +280,13 @@
     font-family: var(--font-body); font-style: italic; font-size: 1.1rem; line-height: 1.55;
     max-width: 880px; padding: 16px 24px; border-left: 4px solid var(--orange); margin: 20px 0 0; opacity: 0.9;
   }
+  /* ===== pull quote (slide 2 — the "Claude làm việc tri thức..." line) ===== */
+  .pullquote {
+    font-family: var(--font-head); font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.22;
+    max-width: 1000px; margin: 6px 0 4px; padding: 0 0 0 22px;
+    border-left: 5px solid var(--orange); letter-spacing: -0.01em;
+  }
 
   /* ===== USE-CASE TABS (slide 4b) ===== */
   .uc-tabs { width: 100%; max-width: 1080px; margin: 18px auto 0; }
@@ -374,42 +381,23 @@
 
 <main class="deck" id="deck">
 
-  <!-- ============ SLIDE 0 · COVER ============ -->
+  <!-- ============ SLIDE 0 · COVER / TITLE CARD (the official talk title) ============ -->
   <!-- type: hero -->
-  <section class="slide dark" id="slide-cover" data-title="Cover">
-    <span class="slide-num"></span>
-    <div class="wrap">
-      <div class="hero-stage">
-        <span class="eyebrow">CXO Club · 14/05/2026 · 20 phút</span>
-        <h1>Định nghĩa <span class="grad-word">vấn đề</span><br/>trước khi với tay lấy AI.</h1>
-        <p class="lede big" style="opacity:0.9">Claude làm việc tri thức — và tự viết phần mềm. Mạnh như cây búa. Việc của bạn: chắc chắn đang cầm cái đinh, và đừng đập từng cái một.</p>
-        <div class="meta">
-          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>14/05/2026</span>
-          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>20 phút</span>
-          <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H3"/><path d="M7 22l-4-4 4-4M3 18h18"/></svg>Tiếng Việt</span>
-        </div>
-      </div>
-      <div class="stage-strip">▸ Slide chờ — chiếu khi mọi người đang ổn định chỗ ngồi. Không nói gì. (Slide setup tiếp theo dùng lúc nghỉ giữa giờ, trước slot.)</div>
-    </div>
-  </section>
-
-  <!-- ============ SLIDE · TITLE CARD (the official talk title) ============ -->
-  <!-- type: hero -->
-  <section class="slide dark" id="slide-title" data-title="Title — Cây búa Claude">
+  <section class="slide dark" id="slide-cover" data-title="Title — Cây búa Claude">
     <span class="slide-num"></span>
     <div class="wrap">
       <div class="hero-split">
-        <span class="eyebrow">CXO Club · 14/05/2026</span>
+        <span class="eyebrow">CXO Club · 14/05/2026 · 20 phút · Tiếng Việt</span>
         <h1>Cây búa <span class="grad-word">Claude</span><br/>trong tối ưu năng suất<br/>dành cho sếp.</h1>
         <p class="lede">"Tối ưu năng suất" thật sự không phải làm cái cũ nhanh hơn — là biết <b>cái nào đáng làm</b>, dựng môi trường cho nó <b>một lần</b>, và bỏ phần còn lại. 20 phút này là cái đó — chứ không phải danh sách mẹo.</p>
         <div class="image-placeholder" data-image-prompt="Anthropic-brand flat editorial illustration, clean line work, restrained orange accent on a dark near-black background, no faces. A single elegant claw hammer in orange line work on the right, with generous empty dark space on the left for a title overlay. The hammer feels like a precision instrument; a few small objects (a screw, a coiled spring) very faintly visible near the head, understated. A sophisticated C-suite hero title card.">
           <img src="images/slide-title-hammer.png" alt="Cây búa Claude — title card" onerror="this.style.display='none'" />
-          <div class="placeholder-label">[Image · Title card — cây búa precision instrument]</div>
+          <div class="placeholder-label">[Image · Title card — cây búa precision instrument trên nền tối]</div>
           <div class="placeholder-prompt">Elegant claw hammer in orange line work on dark, generous empty space on the left for title. Faint screw + spring near the head. Sophisticated, restrained.</div>
         </div>
-        <div class="meta"><span>20 phút</span><span>Tiếng Việt</span></div>
+        <div class="meta"><span>arealisticdreamer.com</span></div>
       </div>
-      <div class="stage-strip">▸ Slide tiêu đề — chiếu khi bắt đầu nói (sau slide chờ + slide setup ở giờ nghỉ). Cách frame: "Tên buổi là 'tối ưu năng suất' — nhưng năng suất thật không phải làm cái cũ nhanh hơn. Là biết cái nào đáng làm, dựng môi trường một lần, bỏ phần còn lại. Mẹo thì lát có (slide menu). Hôm nay nói cái làm cho mấy cái mẹo đó đáng tiền." → vào Beat 1 (hook).</div>
+      <div class="stage-strip">▸ Slide chờ + slide tiêu đề (gộp một slide). Chiếu khi mọi người đang ổn định. Khi bắt đầu nói: đọc tiêu đề, rồi câu lede — "Tên buổi là 'tối ưu năng suất' — nhưng năng suất thật không phải làm cái cũ nhanh hơn. Là biết cái nào đáng làm, dựng môi trường một lần, bỏ phần còn lại. Mẹo thì lát có (slide menu). Hôm nay nói cái làm cho mấy cái mẹo đó đáng tiền." → vào Beat 1 (hook). (Slide setup ở giờ nghỉ trước slot là slide riêng tiếp theo.)</div>
     </div>
   </section>
 
@@ -458,7 +446,7 @@
     <span class="slide-num"></span>
     <div class="wrap">
       <div class="slide-kicker">Cây búa</div>
-      <h1>Claude giỏi gì: <span class="u-orange">đọc · viết · phán đoán · tổng hợp</span> — <br/>và <span class="u-orange">tự viết phần mềm</span>.</h1>
+      <blockquote class="pullquote">Claude làm việc tri thức — và tự viết phần mềm. Mạnh như cây búa. Việc của bạn: chắc chắn đang cầm <span class="u-orange">cái đinh</span>, và đừng đập từng cái một.</blockquote>
       <div class="cmp2" style="margin-top:8px">
         <div class="col">
           <h3>Việc tri thức (knowledge work)</h3>
@@ -741,7 +729,7 @@
 <!-- ============ PRESENTER BAR ============ -->
 <div class="bar" id="bar">
   <button id="prev" title="Trước (←)">←</button>
-  <span class="pg" id="pg">01 / 14</span>
+  <span class="pg" id="pg">01 / 13</span>
   <button id="next" title="Sau (→ / Space)">→</button>
   <span class="mode" id="modeBadge">stage on</span>
   <button id="toggleStage" title="Ẩn/hiện stage cue (S)">S</button>
