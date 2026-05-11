@@ -280,12 +280,47 @@
     font-family: var(--font-body); font-style: italic; font-size: 1.1rem; line-height: 1.55;
     max-width: 880px; padding: 16px 24px; border-left: 4px solid var(--orange); margin: 20px 0 0; opacity: 0.9;
   }
-  /* ===== pull quote (slide 2 — the "Claude làm việc tri thức..." line) ===== */
+  /* ===== pull quote (small, generic) ===== */
   .pullquote {
     font-family: var(--font-head); font-weight: 600;
     font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.22;
     max-width: 1000px; margin: 6px 0 4px; padding: 0 0 0 22px;
     border-left: 5px solid var(--orange); letter-spacing: -0.01em;
+  }
+
+  /* ===== MANIFESTO QUOTE (slide-quote) — editorial 3-movement pull-quote ===== */
+  .manifesto { position: relative; max-width: 1140px; margin: 0 auto; width: 100%; padding: 8px 0 8px 56px; }
+  .manifesto::before {
+    content: ""; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(217,119,87,0.55) 12%, rgba(217,119,87,0.55) 88%, transparent);
+  }
+  .manifesto::after {
+    content: ""; position: absolute; right: -2vw; bottom: -8vh;
+    width: clamp(180px, 26vw, 360px); height: clamp(180px, 26vw, 360px);
+    background: no-repeat center / contain url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23d97757' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M22 78 L58 42'/><path d='M50 30 q4-8 14-8 q12 0 18 8 q-6 6-18 6 q-10 0-14-6 z'/><path d='M48 32 l14 14'/></svg>");
+    opacity: 0.07; pointer-events: none; transform: rotate(-8deg);
+  }
+  .mf-line { display: grid; grid-template-columns: auto 1fr; column-gap: 22px; align-items: baseline; padding: clamp(10px,1.6vh,18px) 0; }
+  .mf-line + .mf-line { border-top: 1px solid rgba(255,255,255,0.07); }
+  .mf-idx { font-family: var(--font-mono); font-size: clamp(11px,1vw,13px); font-weight: 600; letter-spacing: 0.18em; color: var(--orange); opacity: 0.85; padding-top: 0.55em; }
+  .mf-text { font-family: var(--font-head); font-weight: 600; letter-spacing: -0.02em; line-height: 1.12; color: var(--light); }
+  .mf-line[data-w="1"] .mf-text { font-size: clamp(1.7rem,3.4vw,2.7rem); opacity: 0.82; font-weight: 500; }
+  .mf-line[data-w="2"] .mf-text { font-size: clamp(2.2rem,4.6vw,3.6rem); opacity: 0.92; }
+  .mf-line[data-w="3"] .mf-text { font-size: clamp(2.6rem,5.6vw,4.6rem); font-weight: 700; }
+  .mf-text .grad-word { font-weight: inherit; }
+  .mf-text .u-orange { text-decoration-thickness: 0.09em; text-underline-offset: 0.06em; }
+  .mf-text .quiet { color: var(--mid); font-weight: 500; }
+  .slide.in-view .manifesto .mf-line { animation: rise-in 0.6s cubic-bezier(0.22,1,0.36,1) backwards; }
+  .slide.in-view .manifesto .mf-line[data-w="1"] { animation-delay: 0.05s; }
+  .slide.in-view .manifesto .mf-line[data-w="2"] { animation-delay: 0.22s; }
+  .slide.in-view .manifesto .mf-line[data-w="3"] { animation-delay: 0.42s; }
+  .slide.in-view .manifesto::before { animation: mf-rule 0.7s ease 0.05s backwards; }
+  @keyframes mf-rule { from { transform: scaleY(0); transform-origin: top; } to { transform: scaleY(1); } }
+  @media (max-width: 760px) {
+    .manifesto { padding-left: 28px; }
+    .manifesto::after { opacity: 0.05; bottom: -4vh; }
+    .mf-line { grid-template-columns: 1fr; row-gap: 4px; }
+    .mf-idx { padding-top: 0; }
   }
 
   /* ===== USE-CASE TABS (slide 4b) ===== */
@@ -421,13 +456,26 @@
     </div>
   </section>
 
-  <!-- ============ SLIDE · QUOTE — the thesis line ============ -->
+  <!-- ============ SLIDE · QUOTE — the thesis, as an editorial manifesto ============ -->
   <!-- type: big-quote -->
   <section class="slide dark" id="slide-quote" data-title="Quote — cây búa / cái đinh">
     <span class="slide-num"></span>
-    <div class="wrap" style="justify-content:center; min-height:60vh;">
-      <blockquote class="pullquote" style="border-left:none; padding:0; font-size:clamp(2rem,4.4vw,3.4rem); line-height:1.18; max-width:1100px; margin:0 auto; text-align:left;">Claude làm việc tri thức — và tự viết phần mềm.<br/>Mạnh như <span class="grad-word">cây búa</span>.<br/>Việc của bạn: chắc chắn đang cầm <span class="u-orange">cái đinh</span>, và đừng đập từng cái một.</blockquote>
-      <div class="stage-strip">▸ Beat 1 → 2 cầu nối. Đọc chậm, để cả 3 dòng rơi xuống. Đây là luận điểm cả buổi gói trong một câu. → sang slide tiếp: Claude cụ thể giỏi gì.</div>
+    <div class="wrap" style="justify-content:center;">
+      <div class="manifesto">
+        <div class="mf-line" data-w="1">
+          <span class="mf-idx">01</span>
+          <span class="mf-text">Claude làm việc tri thức — và tự viết phần mềm.</span>
+        </div>
+        <div class="mf-line" data-w="2">
+          <span class="mf-idx">02</span>
+          <span class="mf-text">Mạnh như <span class="grad-word">cây búa</span>.</span>
+        </div>
+        <div class="mf-line" data-w="3">
+          <span class="mf-idx">03</span>
+          <span class="mf-text">Việc của bạn: chắc chắn đang cầm <span class="u-orange">cái đinh</span>, <span class="quiet">và đừng đập từng cái một.</span></span>
+        </div>
+      </div>
+      <div class="stage-strip">▸ Beat 1 → 2 cầu nối. Đọc theo nhịp: dòng 01 nhẹ, 02 to hơn, 03 — câu chốt — đập mạnh. Đây là luận điểm cả buổi gói trong một câu. → sang slide tiếp: Claude cụ thể giỏi gì.</div>
     </div>
   </section>
 
