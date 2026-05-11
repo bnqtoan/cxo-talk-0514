@@ -208,6 +208,38 @@
   .checklist-card ul.flat li b { font-family: var(--font-mono); font-size: 0.82em; color: var(--mid); font-weight: 500; display: block; margin-top: 2px; }
   @media (max-width: 760px) { .checklist-card ul.flat { grid-template-columns: 1fr; } }
 
+  /* ===== GATE CARD (slide 4 — the photograph-it specimen) ===== */
+  .gate-card {
+    position: relative; background: #fff; border: 1px solid var(--light-gray);
+    border-radius: var(--radius); padding: 30px 38px 30px 34px; margin: 16px auto 0;
+    max-width: 1060px; width: 100%; box-shadow: 0 10px 36px rgba(20,20,19,0.07);
+  }
+  /* the question-number rail */
+  .gate-card::before {
+    content: ""; position: absolute; left: 0; top: 20px; bottom: 20px; width: 3px;
+    background: linear-gradient(180deg, transparent, var(--orange) 10%, var(--orange) 90%, transparent);
+    border-radius: 3px;
+  }
+  .gate-card ol { list-style: none; counter-reset: g; margin: 0; padding: 0; }
+  .gate-card ol li {
+    counter-increment: g; position: relative; display: grid;
+    grid-template-columns: 2.6rem 1fr; column-gap: 20px; align-items: baseline;
+    padding: clamp(11px,1.5vh,16px) 0;
+  }
+  .gate-card ol li + li { border-top: 1px solid var(--light-gray); }
+  .gate-card ol li::before {
+    content: counter(g, decimal-leading-zero);
+    font-family: var(--font-mono); font-weight: 700; font-size: 1rem;
+    color: var(--orange); letter-spacing: 0.05em;
+  }
+  .gate-card .q { font-family: var(--font-head); font-weight: 600; font-size: clamp(1.1rem,1.9vw,1.4rem); line-height: 1.32; color: var(--dark); }
+  .gate-card .q b { font-weight: 700; }
+  .gate-card .g { display: block; margin-top: 4px; font-family: var(--font-body); font-style: italic; font-size: clamp(0.92rem,1.4vw,1.05rem); line-height: 1.4; color: var(--mid); }
+  @media (max-width: 760px) {
+    .gate-card { padding: 22px 22px 22px 20px; }
+    .gate-card ol li { grid-template-columns: 1.9rem 1fr; column-gap: 12px; }
+  }
+
   /* ===== 2-col / 3-col compare ===== */
   .cmp2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 20px 0; align-items: stretch; }
   .cmp2 .col { background: #fff; border: 1px solid var(--light-gray); border-top: 4px solid var(--orange); border-radius: var(--radius); padding: 24px 26px; }
@@ -236,18 +268,31 @@
     font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.18;
     max-width: 1000px; margin: 0 auto 22px; text-align: left; letter-spacing: -0.02em;
   }
-  .takeaways { list-style: none; margin: 0 auto 18px; padding: 0; max-width: 980px; counter-reset: tk; }
+  /* numbered-movement crescendo (matches the manifesto on slide-quote) */
+  .takeaways { list-style: none; margin: 0; padding: 0 0 0 30px; max-width: 760px; position: relative; counter-reset: tk; }
+  .takeaways::before {
+    content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(180deg, transparent, rgba(217,119,87,0.5) 12%, rgba(217,119,87,0.5) 88%, transparent);
+  }
   .takeaways li {
-    counter-increment: tk; position: relative; padding: 16px 0 16px 52px;
-    border-bottom: 1px solid var(--light-gray);
-    font-family: var(--font-body); font-size: clamp(1.1rem, 1.9vw, 1.35rem); line-height: 1.5;
+    counter-increment: tk; position: relative; display: grid;
+    grid-template-columns: 2.3rem 1fr; column-gap: 18px; align-items: baseline;
+    padding: clamp(11px,1.6vh,18px) 0;
+    font-family: var(--font-head); line-height: 1.22; color: var(--dark);
   }
-  .takeaways li:last-child { border-bottom: none; }
+  .takeaways li + li { border-top: 1px solid var(--light-gray); }
   .takeaways li::before {
-    content: counter(tk); position: absolute; left: 0; top: 14px;
-    font-family: var(--font-mono); font-weight: 700; font-size: 1.2rem; color: var(--orange);
-    width: 36px; text-align: center;
+    content: counter(tk, decimal-leading-zero);
+    font-family: var(--font-mono); font-weight: 700; font-size: 0.95rem; color: var(--orange); letter-spacing: 0.05em;
   }
+  .takeaways li b { font-weight: 700; }
+  .takeaways li[data-w="1"] { font-size: clamp(1.05rem,1.7vw,1.3rem); font-weight: 500; opacity: 0.86; }
+  .takeaways li[data-w="2"] { font-size: clamp(1.2rem,2vw,1.5rem); font-weight: 600; }
+  .takeaways li[data-w="3"] { font-size: clamp(1.35rem,2.4vw,1.75rem); font-weight: 700; }
+  .slide.in-view .takeaways li { animation: rise-in 0.55s cubic-bezier(0.22,1,0.36,1) backwards; }
+  .slide.in-view .takeaways li[data-w="1"] { animation-delay: 0.06s; }
+  .slide.in-view .takeaways li[data-w="2"] { animation-delay: 0.2s; }
+  .slide.in-view .takeaways li[data-w="3"] { animation-delay: 0.36s; }
   .action-line { font-family: var(--font-head); font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 500; margin-top: 18px; padding: 16px 20px; background: rgba(217,119,87,0.07); border-left: 4px solid var(--orange); border-radius: 8px; max-width: 980px; }
 
   /* ===== DEMO FRAME (slide 7 — speaker switches to screen) ===== */
@@ -525,13 +570,13 @@
     <div class="wrap">
       <div class="slide-kicker">Chụp màn hình cái này</div>
       <h1>AI có phải <span class="u-orange">đúng công cụ</span> không? — 5 câu.</h1>
-      <div class="checklist-card">
+      <div class="gate-card">
         <ol>
-          <li>Nút thắt thật là <b>đọc / viết / phán đoán / tổng hợp</b> — hay là quyết định còn thiếu / người còn thiếu / một project dọn dữ liệu / động lực sai?</li>
-          <li>Có <b>lặp lại đủ nhiều</b> để đáng build không? (1 lần → làm tay. &lt;2 lần/tuần → đừng build gì cả.)</li>
-          <li><b>Input có sẵn</b> không — hay phải làm một project dọn dữ liệu trước? (Nếu có, <i>đó</i> mới là việc thật, không phải AI.)</li>
-          <li><b>Ai dùng output</b>, sai có ai quan tâm không? (Khách hàng / pháp lý → bắt buộc có người kiểm → đổi cách làm.)</li>
-          <li>Claude làm <b>cụ thể cái gì</b> — và <b>cái gì phải để con người làm</b>? (Nêu rõ phần phán đoán KHÔNG được tự động hóa.)</li>
+          <li><span class="q">Nút thắt thật là <b>đọc / viết / phán đoán / tổng hợp</b> — hay là quyết định còn thiếu, người còn thiếu, một project dọn dữ liệu, động lực sai?<span class="g">Nếu là mấy thứ sau — búa không đóng được. ❌</span></span></li>
+          <li><span class="q">Có <b>lặp lại đủ nhiều</b> để đáng build không?<span class="g">1 lần → làm tay. Dưới 2 lần/tuần → đừng build gì cả.</span></span></li>
+          <li><span class="q"><b>Input có sẵn</b> không — hay phải làm một project dọn dữ liệu trước?<span class="g">Nếu phải dọn — đó mới là việc thật, không phải AI.</span></span></li>
+          <li><span class="q"><b>Ai dùng output</b>, sai có ai quan tâm không?<span class="g">Khách hàng / pháp lý → bắt buộc có người kiểm → đổi cách làm.</span></span></li>
+          <li><span class="q">Claude làm <b>cụ thể cái gì</b> — và <b>cái gì phải để con người làm</b>?<span class="g">Nêu rõ phần phán đoán KHÔNG được tự động hóa.</span></span></li>
         </ol>
       </div>
       <div class="stage-strip">▸ Beat 2 cont. <b>Chiếu TO. Đọc cả 5 câu thành tiếng.</b> Chốt: "Rớt 1 trong 5 → đừng đập. Cái prompt anh/chị quét lúc nãy hỏi anh/chị đúng 5 câu này, trên vấn đề của chính anh/chị." Để slide đứng yên.</div>
@@ -702,10 +747,10 @@
     <div class="wrap" style="display:grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center;">
       <div>
         <div class="slide-kicker">Mang về</div>
-        <ol class="takeaways" style="max-width:none">
-          <li>Đừng đi tìm vấn đề cho giải pháp — đi <b>từ vấn đề</b>. Ai cũng có búa; lợi thế là biết đập vào đâu, và đừng đập từng cái một.</li>
-          <li>Vấn đề lớn nhất của bạn thường <b>KHÔNG phải vấn đề AI</b> — chạy 5 câu gate trước.</li>
-          <li>Nếu đúng là vấn đề AI: <b>dựng một môi trường</b> — bề mặt + kết nối + skill + ranh giới. Một lần.</li>
+        <ol class="takeaways">
+          <li data-w="1">Đừng đi tìm vấn đề cho giải pháp — đi <b>từ vấn đề</b>. Ai cũng có búa; lợi thế là biết đập vào đâu, và đừng đập từng cái một.</li>
+          <li data-w="2">Vấn đề lớn nhất của bạn thường <b>KHÔNG phải vấn đề AI</b> — chạy 5 câu gate trước.</li>
+          <li data-w="3">Nếu đúng là vấn đề AI: <b>dựng một môi trường</b> — bề mặt + kết nối + skill + ranh giới. Một lần.</li>
         </ol>
       </div>
       <div class="image-placeholder" data-image-prompt="Anthropic-brand flat editorial illustration, cream background, restrained orange, no faces. A single nail driven cleanly and fully into a piece of wood, flush. Beside it, a small tray holding the screw, pebble, and coiled spring — set aside neatly, not discarded. Resolved, calm.">
