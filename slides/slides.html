@@ -401,25 +401,6 @@
     </div>
   </section>
 
-  <!-- ============ SLIDE · SETUP (used before the slot) ============ -->
-  <!-- type: setup -->
-  <section class="slide" id="slide-setup" data-title="Setup — quét QR">
-    <span class="slide-num"></span>
-    <div class="wrap">
-      <div class="slide-kicker">Trước khi bắt đầu</div>
-      <h1>Lấy điện thoại ra — <span class="u-orange">chạy thử</span> trên vấn đề của bạn.</h1>
-      <div class="setup-stage">
-        <div class="qr-box">
-          <img src="https://go.bnqtoan.workers.dev/qr/dinh-vande" alt="QR — go.bnqtoan.workers.dev/dinh-vande" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="qr-fallback" style="display:none">go.bnqtoan.workers.dev/dinh-vande</div>
-        </div>
-        <div class="url">go.bnqtoan.workers.dev/dinh-vande</div>
-        <div class="steps">Quét QR &nbsp;→&nbsp; mở app <b>Claude</b> (bản free dùng được) &nbsp;→&nbsp; copy cả khối prompt, dán vào &nbsp;→&nbsp; trả lời 7 câu về <b>MỘT vấn đề đang làm bạn đau nhất</b> &nbsp;→&nbsp; xong thì giơ tay.</div>
-      </div>
-      <div class="stage-strip">▸ PRE-TALK (lúc mọi người đến / nghỉ giữa giờ). Đi quanh giúp ai kẹt — chưa có app Claude → cài 30s, hoặc ghép cặp. <b>KHÔNG ép</b> — ai không làm cũng được, phần on-stage vẫn chạy với ví dụ.</div>
-    </div>
-  </section>
-
   <!-- ============ SLIDE 1 · HOOK — đi tìm vấn đề cho giải pháp ============ -->
   <!-- type: hero -->
   <section class="slide" id="slide-1" data-title="Hook — vấn đề cho giải pháp">
@@ -440,13 +421,23 @@
     </div>
   </section>
 
-  <!-- ============ SLIDE 2 · CÂY BÚA — Claude làm được gì ============ -->
+  <!-- ============ SLIDE · QUOTE — the thesis line ============ -->
+  <!-- type: big-quote -->
+  <section class="slide dark" id="slide-quote" data-title="Quote — cây búa / cái đinh">
+    <span class="slide-num"></span>
+    <div class="wrap" style="justify-content:center; min-height:60vh;">
+      <blockquote class="pullquote" style="border-left:none; padding:0; font-size:clamp(2rem,4.4vw,3.4rem); line-height:1.18; max-width:1100px; margin:0 auto; text-align:left;">Claude làm việc tri thức — và tự viết phần mềm.<br/>Mạnh như <span class="grad-word">cây búa</span>.<br/>Việc của bạn: chắc chắn đang cầm <span class="u-orange">cái đinh</span>, và đừng đập từng cái một.</blockquote>
+      <div class="stage-strip">▸ Beat 1 → 2 cầu nối. Đọc chậm, để cả 3 dòng rơi xuống. Đây là luận điểm cả buổi gói trong một câu. → sang slide tiếp: Claude cụ thể giỏi gì.</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE · CÂY BÚA — Claude làm được gì ============ -->
   <!-- type: visual-diagram -->
   <section class="slide" id="slide-2" data-title="Cây búa">
     <span class="slide-num"></span>
     <div class="wrap">
-      <div class="slide-kicker">Cây búa</div>
-      <blockquote class="pullquote">Claude làm việc tri thức — và tự viết phần mềm. Mạnh như cây búa. Việc của bạn: chắc chắn đang cầm <span class="u-orange">cái đinh</span>, và đừng đập từng cái một.</blockquote>
+      <div class="slide-kicker">Cây búa giỏi gì</div>
+      <h1>Hai thứ Claude làm tốt: <span class="u-orange">việc tri thức</span> — và <span class="u-orange">tự xây công cụ</span>.</h1>
       <div class="cmp2" style="margin-top:8px">
         <div class="col">
           <h3>Việc tri thức (knowledge work)</h3>
@@ -720,7 +711,26 @@
           <a href="http://arealisticdreamer.com/" target="_blank" rel="noopener">arealisticdreamer.com</a>
         </div>
       </div>
-      <div class="stage-strip">▸ Slide đóng. Để nó đứng yên trong lúc Q&A. Nếu hết Q&A — quay lại slide 4 (gate) hoặc slide 6 (5 bề mặt) cho ai chưa chụp kịp.</div>
+      <div class="stage-strip">▸ Slide đóng. Để nó đứng yên trong lúc Q&A. Nếu hết Q&A — quay lại slide gate hoặc slide "5 bề mặt" cho ai chưa chụp kịp. (Slide tiếp theo — setup/QR — là slide riêng cho giờ nghỉ TRƯỚC slot, không thuộc 20 phút.)</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE · SETUP (NOT in the 20-min flow — shown during the pre-slot break) ============ -->
+  <!-- type: setup -->
+  <section class="slide" id="slide-setup" data-title="(Pre-slot) Setup — quét QR">
+    <span class="slide-num"></span>
+    <div class="wrap">
+      <div class="slide-kicker">Trước slot · giờ nghỉ</div>
+      <h1>Lấy điện thoại ra — <span class="u-orange">chạy thử</span> trên vấn đề của bạn.</h1>
+      <div class="setup-stage">
+        <div class="qr-box">
+          <img src="https://go.bnqtoan.workers.dev/qr/dinh-vande" alt="QR — go.bnqtoan.workers.dev/dinh-vande" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="qr-fallback" style="display:none">go.bnqtoan.workers.dev/dinh-vande</div>
+        </div>
+        <div class="url">go.bnqtoan.workers.dev/dinh-vande</div>
+        <div class="steps">Quét QR &nbsp;→&nbsp; mở app <b>Claude</b> (bản free dùng được) &nbsp;→&nbsp; copy cả khối prompt, dán vào &nbsp;→&nbsp; trả lời 7 câu về <b>MỘT vấn đề đang làm bạn đau nhất</b> &nbsp;→&nbsp; xong thì giơ tay.</div>
+      </div>
+      <div class="stage-strip">▸ KHÔNG thuộc 20 phút. Chiếu cái này lúc mọi người đến / nghỉ giữa giờ (jump tới slide cuối). Đi quanh giúp ai kẹt — chưa có app Claude → cài 30s, hoặc ghép cặp. <b>KHÔNG ép</b> — ai không làm cũng được, phần on-stage vẫn chạy với ví dụ.</div>
     </div>
   </section>
 
@@ -729,7 +739,7 @@
 <!-- ============ PRESENTER BAR ============ -->
 <div class="bar" id="bar">
   <button id="prev" title="Trước (←)">←</button>
-  <span class="pg" id="pg">01 / 13</span>
+  <span class="pg" id="pg">01 / 14</span>
   <button id="next" title="Sau (→ / Space)">→</button>
   <span class="mode" id="modeBadge">stage on</span>
   <button id="toggleStage" title="Ẩn/hiện stage cue (S)">S</button>
