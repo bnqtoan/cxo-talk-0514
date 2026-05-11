@@ -282,15 +282,17 @@
   }
 
   /* ===== USE-CASE GRID (slide 4b) ===== */
-  .uc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
-  .uc-col { background: #fff; border: 1px solid var(--light-gray); border-top: 4px solid var(--orange); border-radius: var(--radius); padding: 20px 22px; }
+  .uc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .uc-col { background: #fff; border: 1px solid var(--light-gray); border-top: 4px solid var(--orange); border-radius: var(--radius); padding: 18px 18px; }
   .uc-col:nth-child(2) { border-top-color: var(--blue); }
   .uc-col:nth-child(3) { border-top-color: var(--green); }
-  .uc-col h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .uc-col:nth-child(4) { border-top-color: var(--orange-deep); background: rgba(217,119,87,0.05); }
+  .uc-col h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.02rem; margin: 0 0 9px; letter-spacing: -0.01em; }
   .uc-col ul { list-style: none; margin: 0; padding: 0; }
-  .uc-col ul li { font-family: var(--font-body); font-size: 13.5px; line-height: 1.5; padding: 6px 0 6px 16px; position: relative; opacity: 0.9; }
+  .uc-col ul li { font-family: var(--font-body); font-size: 13px; line-height: 1.45; padding: 5px 0 5px 15px; position: relative; opacity: 0.9; }
   .uc-col ul li::before { content: "·"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
-  @media (max-width: 880px) { .uc-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .uc-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .uc-grid { grid-template-columns: 1fr; } }
 
   /* ===== STAGE STRIP (speaker cue, hidden when body.hide-stage) ===== */
   .stage-strip {
@@ -376,7 +378,7 @@
       <div class="hero-stage">
         <span class="eyebrow">CXO Club · 14/05/2026 · 20 phút</span>
         <h1>Định nghĩa <span class="grad-word">vấn đề</span><br/>trước khi với tay lấy AI.</h1>
-        <p class="lede big" style="opacity:0.9">Claude là cây búa. Việc của bạn: chắc chắn đang cầm cái đinh — và đừng đập từng cái một.</p>
+        <p class="lede big" style="opacity:0.9">Claude làm việc tri thức — và tự viết phần mềm. Mạnh như cây búa. Việc của bạn: chắc chắn đang cầm cái đinh, và đừng đập từng cái một.</p>
         <div class="meta">
           <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>14/05/2026</span>
           <span><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>20 phút</span>
@@ -432,14 +434,19 @@
     <span class="slide-num"></span>
     <div class="wrap">
       <div class="slide-kicker">Cây búa</div>
-      <h1>Claude giỏi bốn thứ: <span class="u-orange">đọc · viết · phán đoán · tổng hợp</span>.</h1>
-      <p class="lede">Đọc đống tài liệu, soạn, phân loại, trả lời, nối các bước lại. Mạnh — và <i>ai cũng cầm được</i>: không cần kỹ sư, không cần hạ tầng. Cái sàn vừa nâng lên. Vì dễ với tới quá nên ai cũng vung bừa. Phần khó không phải có búa — là (a) biết đập vào đâu, (b) đừng đập từng cái một.</p>
-      <div class="image-placeholder aspect-21x9" data-image-prompt="Anthropic-brand flat editorial illustration, clean line work on warm cream background, restrained single orange accent, no faces. A single claw hammer, with a clean horizontal label band beneath it reading 'đọc · viết · phán đoán · tổng hợp' in a tidy sans-serif. Minimal, almost diagram-like.">
-        <img src="images/slide-02-hammer-labels.png" alt="Cây búa với nhãn: đọc · viết · phán đoán · tổng hợp" onerror="this.style.display='none'" />
-        <div class="placeholder-label">[Image #2 · Cây búa + 4 nhãn]</div>
-        <div class="placeholder-prompt">A claw hammer with a label band: 'đọc · viết · phán đoán · tổng hợp'. Brand flat editorial, cream, restrained orange, no faces.</div>
+      <h1>Claude giỏi gì: <span class="u-orange">đọc · viết · phán đoán · tổng hợp</span> — <br/>và <span class="u-orange">tự viết phần mềm</span>.</h1>
+      <div class="cmp2" style="margin-top:8px">
+        <div class="col">
+          <h3>Việc tri thức (knowledge work)</h3>
+          <p>Đọc đống tài liệu, soạn, phân loại, trả lời, tổng hợp across nhiều nguồn, nối các bước lại. Thứ mà một trợ lý giỏi sẽ làm — nếu có thời gian.</p>
+        </div>
+        <div class="col alt">
+          <h3>Tự xây công cụ (software)</h3>
+          <p>Viết web app nội bộ, công cụ tự động hóa, tool năng suất nhỏ, tích hợp API, dashboard. Thứ trước đây phải xếp hàng chờ team kỹ thuật — giờ làm được trong vài giờ.</p>
+        </div>
       </div>
-      <div class="stage-strip">▸ Beat 1 cont. Không demo — chỉ nói. (Lưu ý: KHÔNG nói "AI rẻ" — ở VN Claude không rẻ. Điểm là "cái sàn nâng lên / ai cũng với tới được", nên ai cũng vung bừa.) → pivot sang Beat 2: "vậy đâu là cái đinh, đâu là con ốc?"</div>
+      <p class="lede" style="margin-top:18px"><i>Ai cũng cầm được</i> — không cần kỹ sư, không cần hạ tầng. Cái sàn vừa nâng lên. Vì dễ với tới quá nên ai cũng vung bừa. Phần khó không phải có búa — là (a) biết đập vào đâu, (b) đừng đập từng cái một.</p>
+      <div class="stage-strip">▸ Beat 1 cont. Không demo — chỉ nói. Nhấn cột phải: "Claude không chỉ soạn văn bản — nó VIẾT phần mềm. Cái internal tool anh/chị xếp hàng chờ IT 3 tháng — giờ làm trong buổi chiều." (Lưu ý: KHÔNG nói "AI rẻ" — ở VN Claude không rẻ. Điểm là "cái sàn nâng lên / ai cũng với tới được".) → pivot sang Beat 2: "vậy đâu là cái đinh, đâu là con ốc?"</div>
     </div>
   </section>
 
@@ -491,38 +498,49 @@
         <div class="uc-col">
           <h3>Tài chính · Vận hành</h3>
           <ul>
-            <li>Đọc P&amp;L nhiều tháng → cờ chi phí bất thường, dòng cắt được</li>
-            <li>Dựng model tài chính / tracker hàng tháng (file Excel thật)</li>
+            <li>Đọc P&amp;L nhiều tháng → cờ chi phí bất thường</li>
+            <li>Dựng model tài chính / tracker (file Excel thật)</li>
             <li>Stress test kế hoạch — kịch bản xấu nhất</li>
-            <li>Transcript họp → action items + người phụ trách + deadline</li>
-            <li>Digest vận hành hàng tuần — trạng thái dự án + blocker</li>
-            <li>Đọc tài liệu/hóa đơn chụp ảnh → trích dữ liệu có cấu trúc</li>
+            <li>Transcript họp → action items + người + deadline</li>
+            <li>Digest vận hành hàng tuần — trạng thái + blocker</li>
+            <li>Tài liệu/hóa đơn chụp ảnh → trích dữ liệu có cấu trúc</li>
           </ul>
         </div>
         <div class="uc-col">
           <h3>Bán hàng · Khách hàng</h3>
           <ul>
-            <li>Soạn đề xuất hợp tác bám đúng pain của khách cụ thể</li>
+            <li>Soạn đề xuất bám đúng pain của khách cụ thể</li>
             <li>Phân loại feedback / review / ticket → chủ đề + mức độ</li>
-            <li>Phân tích lý do churn → 10 cách sửa xếp theo tác động</li>
-            <li>Tổng hợp lịch sử khách trước renewal call → brief 1 trang</li>
-            <li>Phân tích sau chiến dịch — số vs target → 3 điều chỉnh</li>
-            <li>Digest pipeline hàng tuần từ CRM → kênh leadership</li>
+            <li>Phân tích lý do churn → cách sửa xếp theo tác động</li>
+            <li>Tổng hợp lịch sử khách trước renewal → brief 1 trang</li>
+            <li>Phân tích sau chiến dịch — số vs target → điều chỉnh</li>
+            <li>Digest pipeline hàng tuần từ CRM</li>
           </ul>
         </div>
         <div class="uc-col">
-          <h3>Chiến lược · Sản phẩm · Pháp lý</h3>
+          <h3>Chiến lược · Pháp lý</h3>
           <ul>
-            <li>"Onboard" AI về công ty → mọi câu trả lời sau bám đúng bối cảnh</li>
-            <li>Phân tích đối thủ — bán gì, cho ai, giá nào, điểm yếu ở đâu</li>
-            <li>Stress test chiến lược — đóng vai cố vấn phản biện gắt</li>
-            <li>Review hợp đồng — cờ điều khoản rủi ro, thiếu bảo vệ</li>
-            <li>Quy định mới → "nó thay đổi gì cho mô hình của ta"</li>
-            <li>Portfolio review — phân loại sản phẩm: grow / milk / fix / kill</li>
+            <li>"Onboard" AI về công ty → mọi câu sau bám bối cảnh</li>
+            <li>Phân tích đối thủ — bán gì, cho ai, giá nào, yếu đâu</li>
+            <li>Stress test chiến lược — đóng vai cố vấn phản biện</li>
+            <li>Review hợp đồng — cờ điều khoản rủi ro</li>
+            <li>Quy định mới → "nó thay đổi gì cho mô hình ta"</li>
+            <li>Portfolio review — grow / milk / fix / kill</li>
+          </ul>
+        </div>
+        <div class="uc-col">
+          <h3>Tự xây công cụ ⚡</h3>
+          <ul>
+            <li>Web app nội bộ — form, dashboard, tra cứu</li>
+            <li>Tool tự động hóa — nối A→B, xử lý hàng loạt</li>
+            <li>Tool năng suất nhỏ — máy tính giá, lịch, checklist</li>
+            <li>Tích hợp API — kéo data từ hệ thống này sang kia</li>
+            <li>Skill + MCP — quy trình lặp thành cái nút bấm cả team</li>
+            <li>Routine — chạy theo lịch, không cần ai có mặt</li>
           </ul>
         </div>
       </div>
-      <p class="lede" style="margin-top:16px">Đây không phải danh sách để chọn. Là để bạn nhận ra: cây búa giỏi <b>đọc / viết / phán đoán / tổng hợp</b>. Còn đập vào đâu — bắt đầu từ vấn đề lớn nhất của bạn, không từ cái menu này.</p>
+      <p class="lede" style="margin-top:14px">Đây không phải danh sách để chọn. Là để bạn nhận ra: cây búa giỏi <b>việc tri thức</b> — và giỏi <b>tự xây công cụ</b>. Còn đập vào đâu — bắt đầu từ vấn đề lớn nhất của bạn, không từ cái menu này.</p>
       <div class="stage-strip">▸ Beat 2.5 · ~1 min. Lướt nhanh — KHÔNG đọc từng dòng. Mục đích: cho phòng thấy có "menu" cụ thể (vì họ sẽ muốn ví dụ), rồi lập tức quay lại: "đừng chọn từ menu — đi từ vấn đề." Slide cầu nối từ gate sang môi trường.</div>
     </div>
   </section>
