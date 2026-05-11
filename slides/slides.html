@@ -281,18 +281,22 @@
     max-width: 880px; padding: 16px 24px; border-left: 4px solid var(--orange); margin: 20px 0 0; opacity: 0.9;
   }
 
-  /* ===== USE-CASE GRID (slide 4b) ===== */
-  .uc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
-  .uc-col { background: #fff; border: 1px solid var(--light-gray); border-top: 4px solid var(--orange); border-radius: var(--radius); padding: 18px 18px; }
-  .uc-col:nth-child(2) { border-top-color: var(--blue); }
-  .uc-col:nth-child(3) { border-top-color: var(--green); }
-  .uc-col:nth-child(4) { border-top-color: var(--orange-deep); background: rgba(217,119,87,0.05); }
-  .uc-col h3 { font-family: var(--font-head); font-weight: 700; font-size: 1.02rem; margin: 0 0 9px; letter-spacing: -0.01em; }
-  .uc-col ul { list-style: none; margin: 0; padding: 0; }
-  .uc-col ul li { font-family: var(--font-body); font-size: 13px; line-height: 1.45; padding: 5px 0 5px 15px; position: relative; opacity: 0.9; }
-  .uc-col ul li::before { content: "·"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
-  @media (max-width: 1000px) { .uc-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 600px) { .uc-grid { grid-template-columns: 1fr; } }
+  /* ===== USE-CASE TABS (slide 4b) ===== */
+  .uc-tabs { width: 100%; max-width: 1080px; margin: 18px auto 0; }
+  .uc-tabrow { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .uc-tabrow .uc-tab {
+    font: inherit; font-family: var(--font-head); font-size: 14px; font-weight: 600;
+    padding: 9px 18px; border: 1.5px solid var(--light-gray); border-radius: 999px;
+    background: #fff; color: var(--dark); cursor: pointer; transition: all 0.12s;
+  }
+  .uc-tabrow .uc-tab:hover { border-color: var(--orange); }
+  .uc-tabrow .uc-tab.active { background: var(--orange); color: #fff; border-color: var(--orange); }
+  .uc-panel { display: none; background: #fff; border: 1px solid var(--light-gray); border-top: 4px solid var(--orange); border-radius: var(--radius); padding: 26px 30px; }
+  .uc-panel.active { display: block; }
+  .uc-panel ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 36px; }
+  .uc-panel ul li { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.55; padding: 8px 0 8px 18px; position: relative; opacity: 0.92; break-inside: avoid; }
+  .uc-panel ul li::before { content: "·"; position: absolute; left: 0; color: var(--orange); font-weight: 700; font-size: 1.3em; line-height: 1; }
+  @media (max-width: 760px) { .uc-panel ul { columns: 1; } }
 
   /* ===== STAGE STRIP (speaker cue, hidden when body.hide-stage) ===== */
   .stage-strip {
@@ -494,54 +498,56 @@
     <div class="wrap">
       <div class="slide-kicker">Cây búa giỏi việc gì</div>
       <h1>Đây là <span class="u-orange">cái menu</span> — nhưng bạn vẫn đi từ vấn đề của mình.</h1>
-      <div class="uc-grid">
-        <div class="uc-col">
-          <h3>Tài chính · Vận hành</h3>
+      <div class="uc-tabs" id="ucTabs">
+        <div class="uc-tabrow">
+          <button class="uc-tab active" data-uc="fin">Tài chính · Vận hành</button>
+          <button class="uc-tab" data-uc="sales">Bán hàng · Khách hàng</button>
+          <button class="uc-tab" data-uc="strat">Chiến lược · Pháp lý</button>
+          <button class="uc-tab" data-uc="build">Tự xây công cụ ⚡</button>
+        </div>
+        <div class="uc-panel active" data-uc="fin">
           <ul>
-            <li>Đọc P&amp;L nhiều tháng → cờ chi phí bất thường</li>
-            <li>Dựng model tài chính / tracker (file Excel thật)</li>
-            <li>Stress test kế hoạch — kịch bản xấu nhất</li>
-            <li>Transcript họp → action items + người + deadline</li>
-            <li>Digest vận hành hàng tuần — trạng thái + blocker</li>
-            <li>Tài liệu/hóa đơn chụp ảnh → trích dữ liệu có cấu trúc</li>
+            <li>Đọc P&amp;L nhiều tháng → cờ chi phí bất thường, dòng cắt được</li>
+            <li>Dựng model tài chính / tracker hàng tháng (file Excel thật)</li>
+            <li>Stress test kế hoạch — kịch bản xấu nhất, mức tiền tối thiểu sống sót</li>
+            <li>Transcript họp → action items + người phụ trách + deadline</li>
+            <li>Digest vận hành hàng tuần — trạng thái dự án + blocker</li>
+            <li>Tài liệu / hóa đơn chụp ảnh → trích dữ liệu có cấu trúc</li>
           </ul>
         </div>
-        <div class="uc-col">
-          <h3>Bán hàng · Khách hàng</h3>
+        <div class="uc-panel" data-uc="sales">
           <ul>
-            <li>Soạn đề xuất bám đúng pain của khách cụ thể</li>
+            <li>Soạn đề xuất hợp tác bám đúng pain của khách cụ thể</li>
             <li>Phân loại feedback / review / ticket → chủ đề + mức độ</li>
             <li>Phân tích lý do churn → cách sửa xếp theo tác động</li>
-            <li>Tổng hợp lịch sử khách trước renewal → brief 1 trang</li>
-            <li>Phân tích sau chiến dịch — số vs target → điều chỉnh</li>
-            <li>Digest pipeline hàng tuần từ CRM</li>
+            <li>Tổng hợp lịch sử khách trước renewal call → brief 1 trang</li>
+            <li>Phân tích sau chiến dịch — số vs target → 3 điều chỉnh</li>
+            <li>Digest pipeline hàng tuần từ CRM → kênh leadership</li>
           </ul>
         </div>
-        <div class="uc-col">
-          <h3>Chiến lược · Pháp lý</h3>
+        <div class="uc-panel" data-uc="strat">
           <ul>
-            <li>"Onboard" AI về công ty → mọi câu sau bám bối cảnh</li>
-            <li>Phân tích đối thủ — bán gì, cho ai, giá nào, yếu đâu</li>
-            <li>Stress test chiến lược — đóng vai cố vấn phản biện</li>
-            <li>Review hợp đồng — cờ điều khoản rủi ro</li>
-            <li>Quy định mới → "nó thay đổi gì cho mô hình ta"</li>
-            <li>Portfolio review — grow / milk / fix / kill</li>
+            <li>"Onboard" AI về công ty → mọi câu trả lời sau bám đúng bối cảnh</li>
+            <li>Phân tích đối thủ — bán gì, cho ai, giá nào, điểm yếu ở đâu</li>
+            <li>Stress test chiến lược — đóng vai cố vấn phản biện gắt</li>
+            <li>Review hợp đồng — cờ điều khoản rủi ro, thiếu bảo vệ</li>
+            <li>Quy định mới → "nó thay đổi gì cho mô hình của ta"</li>
+            <li>Portfolio review — phân loại sản phẩm: grow / milk / fix / kill</li>
           </ul>
         </div>
-        <div class="uc-col">
-          <h3>Tự xây công cụ ⚡</h3>
+        <div class="uc-panel" data-uc="build">
           <ul>
-            <li>Web app nội bộ — form, dashboard, tra cứu</li>
-            <li>Tool tự động hóa — nối A→B, xử lý hàng loạt</li>
-            <li>Tool năng suất nhỏ — máy tính giá, lịch, checklist</li>
-            <li>Tích hợp API — kéo data từ hệ thống này sang kia</li>
-            <li>Skill + MCP — quy trình lặp thành cái nút bấm cả team</li>
-            <li>Routine — chạy theo lịch, không cần ai có mặt</li>
+            <li>Web app nội bộ — form, admin dashboard, tool tra cứu</li>
+            <li>Tool tự động hóa — nối hệ thống A → B, xử lý hàng loạt</li>
+            <li>Tool năng suất nhỏ — máy tính báo giá, lịch, checklist app</li>
+            <li>Tích hợp API — kéo data từ hệ thống này sang hệ thống kia</li>
+            <li>Skill + MCP — quy trình lặp thành cái nút bấm cả team dùng</li>
+            <li>Routine — chạy theo lịch / theo trigger, không cần ai có mặt</li>
           </ul>
         </div>
       </div>
       <p class="lede" style="margin-top:14px">Đây không phải danh sách để chọn. Là để bạn nhận ra: cây búa giỏi <b>việc tri thức</b> — và giỏi <b>tự xây công cụ</b>. Còn đập vào đâu — bắt đầu từ vấn đề lớn nhất của bạn, không từ cái menu này.</p>
-      <div class="stage-strip">▸ Beat 2.5 · ~1 min. Lướt nhanh — KHÔNG đọc từng dòng. Mục đích: cho phòng thấy có "menu" cụ thể (vì họ sẽ muốn ví dụ), rồi lập tức quay lại: "đừng chọn từ menu — đi từ vấn đề." Slide cầu nối từ gate sang môi trường.</div>
+      <div class="stage-strip">▸ Beat 2.5 · ~1 min. Bấm qua từng tab (hoặc <b>T</b>) — KHÔNG đọc từng dòng. Mục đích: cho phòng thấy có "menu" cụ thể (vì họ sẽ muốn ví dụ), nhấn tab cuối "tự xây công cụ" (cái họ ít ngờ nhất), rồi lập tức quay lại: "đừng chọn từ menu — đi từ vấn đề." Slide cầu nối từ gate sang môi trường.</div>
     </div>
   </section>
 
@@ -565,7 +571,7 @@
         </div>
       </div>
       <p class="lede" style="margin-top:20px">Việc của founder không phải nghĩ ra use case hay. Là hiểu <b>pattern</b> (việc gì lặp lại) + <b>capacity</b> (mỗi bề mặt Claude làm được gì) — rồi thiết kế môi trường. Use case rơi ra miễn phí.</p>
-      <div class="image-placeholder small" data-image-prompt="Anthropic-brand flat editorial illustration, cream background, restrained orange, no faces. Split: LEFT half a figure (posture only) hammering scattered single nails into a wall one at a time, weary, nails everywhere. RIGHT half a tidy workbench with tools mounted on a pegboard, organized, ready. Thin divider between. Small caption beneath: 'Đừng đập từng cái. Dựng chỗ làm việc một lần.'">
+      <div class="image-placeholder aspect-21x9" data-image-prompt="Anthropic-brand flat editorial illustration, cream background, restrained orange, no faces. Split: LEFT half a figure (posture only) hammering scattered single nails into a wall one at a time, weary, nails everywhere. RIGHT half a tidy workbench with tools mounted on a pegboard, organized, ready. Thin divider between. Small caption beneath: 'Đừng đập từng cái. Dựng chỗ làm việc một lần.'">
         <img src="images/slide-05-usecase-vs-environment.png" alt="Trái: đập từng cái đinh lẻ, mệt. Phải: bàn làm việc set up gọn, sẵn sàng." onerror="this.style.display='none'" />
         <div class="placeholder-label">[Image #5 · Use case vs Môi trường]</div>
         <div class="placeholder-prompt">Left: figure hammering scattered nails one by one, tired. Right: tidy set-up workbench. Brand flat editorial, cream, no faces.</div>
@@ -641,31 +647,44 @@
     </div>
   </section>
 
-  <!-- ============ SLIDE 8 · CHỐT + LINK ============ -->
+  <!-- ============ SLIDE 8 · CHỐT — 3 câu mang về ============ -->
   <!-- type: big-quote -->
-  <section class="slide" id="slide-8" data-title="Chốt + link">
+  <section class="slide" id="slide-8" data-title="Chốt — 3 câu">
     <span class="slide-num"></span>
-    <div class="wrap">
-      <div class="slide-kicker">Mang về</div>
-      <ol class="takeaways">
-        <li>Đừng đi tìm vấn đề cho giải pháp — đi <b>từ vấn đề</b>. Ai cũng có búa; lợi thế là biết đập vào đâu, và đừng đập từng cái một.</li>
-        <li>Vấn đề lớn nhất của bạn thường <b>KHÔNG phải vấn đề AI</b> — chạy 5 câu gate trước.</li>
-        <li>Nếu đúng là vấn đề AI: <b>dựng một môi trường</b> — bề mặt + kết nối + skill + ranh giới. Một lần.</li>
-      </ol>
-      <div class="action-line">Bookmark cái Gist. Tối nay chạy nó cho vấn đề lớn nhất của bạn. Mỗi lần ai trong công ty nói "mình nên dùng AI làm X" — dán cái X vào, chạy gate, <b>trước khi</b> duyệt ngân sách. Câu hỏi cụ thể: gặp mình lúc nghỉ, 60 giây.</div>
-      <div class="image-placeholder small" style="margin-top:18px" data-image-prompt="Anthropic-brand flat editorial illustration, cream background, restrained orange, no faces. A single nail driven cleanly and fully into a piece of wood, flush. Beside it, a small tray holding the screw/pebble/spring from slide 1 — set aside, not discarded. Resolved, calm. Leave clear space at the bottom for a QR code overlay.">
+    <div class="wrap" style="display:grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center;">
+      <div>
+        <div class="slide-kicker">Mang về</div>
+        <ol class="takeaways" style="max-width:none">
+          <li>Đừng đi tìm vấn đề cho giải pháp — đi <b>từ vấn đề</b>. Ai cũng có búa; lợi thế là biết đập vào đâu, và đừng đập từng cái một.</li>
+          <li>Vấn đề lớn nhất của bạn thường <b>KHÔNG phải vấn đề AI</b> — chạy 5 câu gate trước.</li>
+          <li>Nếu đúng là vấn đề AI: <b>dựng một môi trường</b> — bề mặt + kết nối + skill + ranh giới. Một lần.</li>
+        </ol>
+      </div>
+      <div class="image-placeholder" data-image-prompt="Anthropic-brand flat editorial illustration, cream background, restrained orange, no faces. A single nail driven cleanly and fully into a piece of wood, flush. Beside it, a small tray holding the screw, pebble, and coiled spring — set aside neatly, not discarded. Resolved, calm.">
         <img src="images/slide-08-nail-home.png" alt="Một cái đinh đóng gọn vào gỗ; mấy con ốc/viên đá để riêng một bên" onerror="this.style.display='none'" />
         <div class="placeholder-label">[Image #7 · Đinh đóng gọn + tray để riêng]</div>
-        <div class="placeholder-prompt">A nail driven cleanly into wood; screw/pebble/spring set aside in a small tray. Space for QR overlay. Brand flat editorial, cream, no faces.</div>
+        <div class="placeholder-prompt">A nail driven cleanly into wood; screw/pebble/spring set aside in a small tray. Brand flat editorial, cream, no faces.</div>
       </div>
-      <div class="setup-stage" style="padding-top:8px">
-        <div class="qr-box" style="width:clamp(160px,22vw,220px)">
+    </div>
+    <div class="stage-strip">▸ Beat 4 cont. 3 câu mang về — đọc chậm, để mỗi câu rơi xuống. → sang slide cuối: hành động + link.</div>
+  </section>
+
+  <!-- ============ SLIDE 8b · HÀNH ĐỘNG + LINK ============ -->
+  <!-- type: setup -->
+  <section class="slide dark" id="slide-action" data-title="Hành động + link">
+    <span class="slide-num"></span>
+    <div class="wrap">
+      <div class="slide-kicker">Tối nay</div>
+      <h1>Chạy nó cho <span class="grad-word">vấn đề lớn nhất</span> của bạn.</h1>
+      <div class="setup-stage" style="align-items:center; padding-top:6px">
+        <div class="qr-box" style="width:clamp(220px,30vw,300px)">
           <img src="https://go.bnqtoan.workers.dev/qr/dinh-vande" alt="QR — go.bnqtoan.workers.dev/dinh-vande" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="qr-fallback" style="display:none">dinh-vande</div>
+          <div class="qr-fallback" style="display:none">go.bnqtoan.workers.dev/dinh-vande</div>
         </div>
         <div class="url">go.bnqtoan.workers.dev/dinh-vande</div>
+        <div class="steps">Bookmark link này. Tối nay chạy prompt cho vấn đề lớn nhất. Mỗi lần ai trong công ty nói "mình nên dùng AI làm X" → dán cái X vào, chạy 5 câu gate, <b>trước khi</b> duyệt ngân sách.</div>
       </div>
-      <div class="stage-strip">▸ Beat 4 cont. 3 câu mang về — đọc chậm. Chốt bằng action line. Q&A: nếu ai hỏi về một giải pháp AI cụ thể họ đang cân nhắc → bảo họ dán mô tả giải pháp vào Claude với "chạy 5 câu gate này lên giải pháp sau: […]" (triage 60s).</div>
+      <div class="stage-strip">▸ Beat 4 cont. Chốt bằng action line — đọc to. Q&A: nếu ai hỏi về một giải pháp AI cụ thể họ đang cân nhắc → bảo họ dán mô tả vào Claude với "chạy 5 câu gate này lên giải pháp sau: […]" (triage 60s). → sang slide cảm ơn.</div>
     </div>
   </section>
 
@@ -701,7 +720,7 @@
 <!-- ============ PRESENTER BAR ============ -->
 <div class="bar" id="bar">
   <button id="prev" title="Trước (←)">←</button>
-  <span class="pg" id="pg">01 / 12</span>
+  <span class="pg" id="pg">01 / 13</span>
   <button id="next" title="Sau (→ / Space)">→</button>
   <span class="mode" id="modeBadge">stage on</span>
   <button id="toggleStage" title="Ẩn/hiện stage cue (S)">S</button>
@@ -841,6 +860,32 @@
     const wrap = document.getElementById("gridOverlay");
     if (wrap.classList.contains("open") && e.target === wrap) toggleGrid(false);
   });
+
+  // ===== use-case tabs (slide 4b) — click, and T toggles when slide-4b is in view =====
+  (function () {
+    const root = document.getElementById("ucTabs");
+    if (!root) return;
+    const tabs = root.querySelectorAll(".uc-tab");
+    const panels = root.querySelectorAll(".uc-panel");
+    const order = ["fin", "sales", "strat", "build"];
+    function show(key) {
+      tabs.forEach(t => t.classList.toggle("active", t.dataset.uc === key));
+      panels.forEach(p => p.classList.toggle("active", p.dataset.uc === key));
+    }
+    tabs.forEach(t => t.addEventListener("click", () => show(t.dataset.uc)));
+    document.addEventListener("keydown", (e) => {
+      if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+      if (e.key !== "t" && e.key !== "T") return;
+      const sec = document.getElementById("slide-4b");
+      if (!sec) return;
+      const r = sec.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.7 && r.bottom > window.innerHeight * 0.3) {
+        e.preventDefault();
+        const cur = root.querySelector(".uc-tab.active")?.dataset.uc || "fin";
+        show(order[(order.indexOf(cur) + 1) % order.length]);
+      }
+    });
+  })();
 </script>
 
 </body>
