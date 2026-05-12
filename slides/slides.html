@@ -113,11 +113,14 @@
     column-gap: 48px; row-gap: 18px; align-items: start;
   }
   .hero-split .eyebrow { grid-area: eyebrow; font-family: var(--font-mono); font-size: 13.5px; letter-spacing: 0.15em; color: var(--orange); text-transform: uppercase; }
-  .hero-split h1 { grid-area: title; font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.04; margin: 0; }
-  .hero-split .lede { grid-area: lede; font-size: 1.3rem; }
+  .hero-split h1 { grid-area: title; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.08; margin: 0; max-width: 21ch; }
+  .hero-split .lede { grid-area: lede; font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
   .hero-split .image-placeholder { grid-area: image; align-self: center; max-width: 100%; }
   .hero-split .meta { grid-area: meta; display: flex; gap: 24px; flex-wrap: wrap; font-family: var(--font-head); font-size: 14.5px; color: var(--mid); margin-top: 8px; }
   @media (max-width: 900px) { .hero-split { grid-template-columns: 1fr; grid-template-areas: "eyebrow" "title" "image" "lede" "meta"; } }
+  /* keep a phrase-group on one line (no single-word orphans) */
+  .nowrap { white-space: nowrap; }
+  @media (max-width: 480px) { .nowrap { white-space: normal; } }  /* on tiny screens, allow it rather than overflow */
   /* gradient-text accent for cover headline word */
   .grad-word {
     background: linear-gradient(100deg, var(--orange) 0%, #e89172 55%, #f0b89e 100%);
@@ -469,7 +472,7 @@
     <div class="wrap">
       <div class="hero-split">
         <span class="eyebrow">CXO Club · 14/05/2026 · 20 phút · Tiếng Việt</span>
-        <h1>Cây búa <span class="grad-word">Claude</span><br/>trong tối ưu năng suất<br/>dành cho sếp.</h1>
+        <h1><span class="nowrap">Cây búa <span class="grad-word">Claude</span></span> <span class="nowrap">trong tối ưu năng suất</span> <span class="nowrap">dành cho sếp.</span></h1>
         <p class="lede">"Tối ưu năng suất" thật sự không phải làm cái cũ nhanh hơn — là biết <b>cái nào đáng làm</b>, dựng môi trường cho nó <b>một lần</b>, và bỏ phần còn lại. 20 phút này là cái đó — chứ không phải danh sách mẹo.</p>
         <div class="image-placeholder" data-image-prompt="Anthropic-brand flat editorial illustration, clean line work, restrained orange accent on a dark near-black background, no faces. A single elegant claw hammer in orange line work on the right, with generous empty dark space on the left for a title overlay. The hammer feels like a precision instrument; a few small objects (a screw, a coiled spring) very faintly visible near the head, understated. A sophisticated C-suite hero title card.">
           <img src="images/slide-title-hammer.png" alt="Cây búa Claude — title card" onerror="this.style.display='none'" />
