@@ -3,122 +3,93 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>VD 2 · CS đọc lại lịch sử khách → dựng môi trường · Problem Frame</title>
-<meta name="description" content="Ví dụ chuẩn bị sẵn: đúng là vấn đề AI — nhưng giải pháp là dựng MỘT MÔI TRƯỜNG, không phải hỏi Claude từng lần." />
+<title>VD 2 · "CS đốt 15h/tuần đọc lại lịch sử khách" — câu chuyện</title>
+<meta name="description" content="Đúng là vấn đề AI — nhưng giải pháp là dựng MỘT MÔI TRƯỜNG, không phải hỏi Claude từng lần." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="_ref.css" />
+<link rel="stylesheet" href="_story.css" />
 </head>
 <body>
-<div class="wrap">
 
-  <header class="ref-head">
-    <p class="ref-kicker">Problem Frame · Ví dụ 2 (Path B demo)</p>
-    <h1>CS đốt 15h/tuần "đọc lại lịch sử khách" trước mỗi cuộc gọi gia hạn.</h1>
-    <p class="ref-meta">Framed 14/05/2026 · Owner: founder · SaaS B2B, 60 người, cuối Series A</p>
-    <div class="lesson"><b>Bài học của ví dụ này:</b> triệu chứng rõ ràng, đau, giá trị cao — và lần này nút thắt <b>THẬT là đọc/tổng hợp</b> (đúng việc của AI). Nhưng giải pháp KHÔNG phải "hỏi Claude từng lần" — là <b>DỰNG MỘT MÔI TRƯỜNG</b>: skill + MCP + ranh giới rõ. Đây là cái Path B (hướng ✅ + môi trường rõ) nên dùng — hoặc cặp với ví dụ 1.</div>
-  </header>
+  <section class="hero v2">
+    <p class="eyebrow">Problem Frame · Ví dụ 2</p>
+    <h1>"CS của mình đốt 15 tiếng mỗi tuần chỉ để đọc lại lịch sử khách."</h1>
+    <p class="sub">Founder một công ty SaaS B2B (60 người, cuối Series A) nói câu đó. Lần này nút thắt <em>thật sự</em> là đọc/tổng hợp — đúng việc AI giỏi. Nhưng giải pháp đúng không phải "hỏi Claude từng lần".</p>
+    <p class="crumbs">SaaS B2B · 60 người · cuối Series A · có team dev 8 người · framed 14/05/2026</p>
+    <span class="scrolldown">↓ cuộn để đọc</span>
+  </section>
 
-  <h2 class="sec">Khung 7 ô</h2>
-  <div class="canvas">
-    <div class="field">
-      <div class="fnum">01 · TRIỆU CHỨNG</div>
-      <h3>Cái nhìn thấy được</h3>
-      <p>Trước mỗi renewal call, CSM phải <b>tự đọc lại toàn bộ lịch sử khách</b>: ticket support 12 tháng, email threads, ghi chú CRM, usage data, hóa đơn, các lần escalate. Trung bình <b>45–60 phút chuẩn bị/cuộc gọi</b>. ~20 call/tuần across team = ~15–18h/tuần "đọc lại". CSM kêu "không có thời gian làm việc thật sự là nói chuyện với khách."</p>
-    </div>
-    <div class="field">
-      <div class="fnum">02 · AI CHỊU + BAO LÂU MỘT LẦN</div>
-      <h3>Ai đau, tần suất</h3>
-      <p>4 CSM. ~20 renewal call/tuần = ~5/người/tuần × ~50 phút = ~4h/người/tuần chỉ để chuẩn bị. Ngoài renewal còn QBR — thêm ~8 buổi/quý, mỗi buổi chuẩn bị ~2h.</p>
-    </div>
-    <div class="field">
-      <div class="fnum">03 · HIỆN TẠI CHỐNG CHẾ THẾ NÀO</div>
-      <h3>Workaround</h3>
-      <p>CSM mở 5 tab: Zendesk (ticket), HubSpot (CRM notes + email), Stripe (billing), Mixpanel (usage), một Google Doc "account brief" tự gõ tay (thường lỗi thời). Đọc, scroll, copy vài thứ vào Doc, vào cuộc gọi. Sau cuộc gọi hiếm khi update Doc → lần sau đọc lại từ đầu.</p>
-    </div>
-    <div class="field">
-      <div class="fnum">04 · GIẢ THUYẾT GỐC RỄ</div>
-      <h3>Đâu là nút thắt thật</h3>
-      <p>Thông tin về khách <b>phân tán across 5 hệ thống</b>, không ai tổng hợp. Mỗi lần cần "bức tranh khách" phải dựng lại bằng tay. Không phải thiếu người, không phải incentive — là một việc đọc/tổng hợp lặp đi lặp lại mà chưa ai tự động hóa. <i>(Data KHÔNG bẩn — rải rác nhưng sạch và có API. Đây không phải data-cleanup project.)</i></p>
-    </div>
-    <div class="field">
-      <div class="fnum">05 · KHÔNG LÀM GÌ THÌ MẤT GÌ (12 THÁNG)</div>
-      <h3>Cost of inaction</h3>
-      <p>4 CSM × ~4h/tuần × 48 tuần = ~768h/năm ≈ <b>~0.4 FTE</b> đốt vào "đọc lại" ≈ ~28.000$/năm chi phí trực tiếp. CỘNG: renewal call chất lượng thấp hơn → ảnh hưởng NRR (hiện 102%; mỗi 1 điểm ≈ 60.000$ ARR; 102→105 ≈ ~180.000$ ARR). <b>Tổng giá trị tiềm năng: 200.000$+/năm.</b> Rất đáng làm.</p>
-    </div>
-    <div class="field">
-      <div class="fnum">06 · "XONG" TRONG 30 NGÀY</div>
-      <h3>Trạng thái quan sát được</h3>
-      <p>CSM mở MỘT chỗ, gõ tên khách, nhận <b>một bản brief 1 trang trong 60 giây</b>: tình trạng hợp đồng · usage trend (tăng/giảm + sản phẩm nào) · 3 ticket gần nhất + cái nào còn mở · escalations · hóa đơn quá hạn · "điểm rủi ro" + lý do · 3 điểm nên hỏi. Chuẩn bị: 45 phút → dưới 10 phút.</p>
-    </div>
-    <div class="field">
-      <div class="fnum">07 · BỐI CẢNH CÔNG TY</div>
-      <h3>Quy mô · stack</h3>
-      <p><b>60 người · cuối Series A · SaaS B2B</b> (phần mềm vận hành nhà hàng). Tools: Zendesk · HubSpot · Stripe · Mixpanel · Google Workspace · Slack · Linear. <b>Có team dev 8 người. Tất cả các tool trên đều có API.</b></p>
-    </div>
-  </div>
+  <section class="chapter reveal">
+    <span class="ch-num">01 · HỌ THẤY GÌ</span>
+    <div class="said">"Em không có thời gian làm việc thật sự là nói chuyện với khách — em bận đọc lại."<span class="by">— Customer Success Manager</span></div>
+    <p>Trước mỗi cuộc gọi gia hạn (renewal call), CSM phải <b>tự đọc lại toàn bộ lịch sử khách</b>: ticket support 12 tháng, email threads, ghi chú CRM, usage data, hóa đơn, các lần escalate. Trung bình <b>45–60 phút chuẩn bị/cuộc gọi</b>. ~20 call/tuần across team = ~15–18h/tuần "đọc lại".</p>
+    <img class="ch-img" src="img/e2-complaint.png" alt="CSM giữa 5 cửa sổ Zendesk/HubSpot/Stripe/Mixpanel/Google Doc, ghép tay bức tranh khách, đồng hồ ~50 phút" onerror="this.style.display='none'" />
+    <p class="ch-cap">[Hình · 5 tab, một bản brief lỗi thời, ~50 phút trước mỗi cuộc gọi]</p>
+  </section>
 
-  <h2 class="sec">Hướng giải — và 5 câu gate</h2>
+  <section class="chapter reveal">
+    <span class="ch-num">02 · NÚT THẮT THẬT — VÀ NÓ ĐÚNG LÀ VẤN ĐỀ AI</span>
+    <p class="big">Thông tin về khách phân tán across 5 hệ thống. Không ai tổng hợp. Mỗi lần cần "bức tranh khách" thì dựng lại bằng tay.</p>
+    <p>Không phải thiếu người. Không phải incentive sai. Là một việc <b>đọc + tổng hợp lặp đi lặp lại</b> mà chưa ai tự động hóa. Quan trọng: data <b>không bẩn</b> — nó rải rác nhưng sạch, và cả 5 hệ thống đều có API. Đây không phải một data-cleanup project trá hình. Chạy qua 5 câu gate: nút thắt ✓ là phán đoán/ngôn ngữ/tổng hợp · lặp đủ nhiều ✓ (~20/tuần) · input có sẵn ✓ · ai dùng output — CSM, không gửi khách, không pháp lý ✓ · và Claude làm phần đọc/tổng hợp, <b>con người vẫn quyết</b> cuộc gọi.</p>
+    <p>Năm trên năm câu. <b>Đây là vấn đề AI thật.</b> Giá trị tiềm năng: ~0.4 FTE/năm được giải phóng + renewal call chuẩn bị tốt hơn → NRR — tổng ~200.000$+/năm.</p>
+  </section>
 
-  <div class="dir">
-    <div class="dhead">
-      <span class="dletter">A</span>
-      <span class="dtitle">Sửa quy trình — thuê 1 ops analyst gõ brief tay</span>
+  <section class="chapter reveal">
+    <span class="ch-num">03 · "XONG" — VÀ ĐÂY LÀ CHỖ QUAN TRỌNG</span>
+    <p>CSM mở MỘT chỗ, gõ tên khách, nhận <b>một bản brief 1 trang trong 60 giây</b>: tình trạng hợp đồng · usage trend · 3 ticket gần nhất + cái nào còn mở · escalations · hóa đơn quá hạn · "điểm rủi ro" + lý do · 3 điểm nên hỏi. Chuẩn bị: 45 phút → dưới 10 phút.</p>
+    <p class="big">Nhưng cách làm KHÔNG phải "CSM hỏi Claude từng lần". Là <b>dựng một môi trường — một lần</b>.</p>
+    <img class="ch-img" src="img/e2-environment.png" alt="Sơ đồ: 4 hệ thống → skill /account-brief → một bản brief 1 trang → con người đọc và ra quyết định" onerror="this.style.display='none'" />
+    <p class="ch-cap">[Hình · 4 hệ thống → một skill → một brief → con người quyết. Đó là môi trường, không phải use case.]</p>
+    <div class="envcard">
+      <h3>Môi trường — bốn thứ</h3>
+      <div class="erow"><span class="ekey">Bề mặt</span><span class="eval"><b>skill + MCP</b> — <code>/account-brief</code> (skill, dùng được trong Cowork bởi CSM không kỹ thuật) + MCP server nối Zendesk/HubSpot/Stripe/Mixpanel (dev build, hoặc connector sẵn). Sau: bọc thành <b>Routine</b> chạy đêm trước mỗi renewal call.</span></div>
+      <div class="erow"><span class="ekey">Kết nối</span><span class="eval">Zendesk (ticket) · HubSpot (CRM, email, contract) · Stripe (billing/overdue) · Mixpanel (usage) · lịch renewal call.</span></div>
+      <div class="erow"><span class="ekey">Skill dùng lại</span><span class="eval"><code>/account-brief {tên khách}</code> → brief 1 trang theo template cố định: hợp đồng · usage trend · 3 ticket + open · escalations · billing flags · risk score + lý do · 3 câu nên hỏi.</span></div>
+      <div class="erow"><span class="ekey">Ranh giới</span><span class="eval">Claude đọc + tổng hợp + gắn cờ rủi ro. Claude KHÔNG quyết upsell/nhượng bộ/escalate — đó là CSM. Brief luôn được CSM đọc qua trước cuộc gọi.</span></div>
     </div>
-    <p>Một người chuyên đọc 5 hệ thống và viết brief cho CSM trước mỗi call.</p>
-    <ul>
-      <li><b>Nút thắt thật:</b> đúng — đọc/tổng hợp. Nhưng người này sẽ làm chính xác việc máy làm tốt: đọc API output, tổng hợp theo template. 768h/năm = ~0.4 FTE → thuê 1 người part-time.</li>
-    </ul>
-    <div class="verdict caveat">⚠️ pursue with caveat — chạy được, nhưng tốn lương + người đó cũng chậm hơn máy + phụ thuộc một người. Lựa chọn "nếu không muốn build gì". Founder không muốn hire (đang giữ headcount).</div>
-  </div>
+  </section>
 
-  <div class="dir chosen">
-    <div class="dhead">
-      <span class="dletter">B</span>
-      <span class="dtitle">Build một AI ENVIRONMENT — skill <code>/account-brief</code> + MCP nối 4 hệ thống</span>
-      <span class="dchosen">chosen</span>
+  <section class="chapter reveal">
+    <span class="ch-num">04 · BA HƯỚNG — VÀ TẠI SAO "BUILD" THẮNG</span>
+    <div class="verdicts">
+      <div class="vpill caveat"><span class="vm">⚠️</span><span><b>A · Thuê 1 ops analyst gõ brief tay</b> — đúng việc (đọc/tổng hợp), nhưng người đó sẽ làm chính xác việc máy làm tốt, chậm hơn, + phụ thuộc một người, + tốn lương. Founder không muốn hire.</span></div>
+      <div class="vpill go"><span class="vm">✅</span><span><b>B · Build môi trường AI</b> — <code>/account-brief</code> skill + MCP nối 4 hệ thống. Đây là hướng. MCP trước (~1 tuần hoặc connector sẵn), skill sau (~2 ngày), test với 1 CSM 1 tuần, rollout.</span></div>
+      <div class="vpill caveat"><span class="vm">⚠️</span><span><b>C · Mua "customer 360" SaaS</b> (Catalyst/Vitally/Gainsight) — 20–60k$/năm, setup 2–3 tháng, vẫn phải config. Với 8 dev + chỉ cần 4 connector + 1 skill, build rẻ hơn và đúng nhu cầu hơn. Đánh giá lại nếu B kéo dài quá 3 tuần.</span></div>
     </div>
-    <p>Dev build một MCP server (hoặc dùng connector sẵn có) cho Zendesk + HubSpot + Stripe + Mixpanel. Build một skill <code>/account-brief {tên khách}</code> → skill gọi 4 nguồn, tổng hợp theo template cố định, ra brief 1 trang. CSM chạy trong Cowork hoặc Claude chat. Sau này: thêm trigger tự động sinh brief đêm trước mỗi renewal call đã lên lịch (Routine).</p>
-    <ul>
-      <li><b>Nút thắt thật:</b> đọc + tổng hợp across nguồn — <i>đúng việc Claude giỏi.</i></li>
-      <li><b>Lặp lại:</b> ~20/tuần + QBR — thừa đủ để build (gate Q2: pass mạnh).</li>
-      <li><b>Input có sẵn:</b> 4 hệ thống đều có API, data sạch. KHÔNG phải data-cleanup project (gate Q3: pass).</li>
-      <li><b>Ai dùng output / rủi ro:</b> CSM dùng brief để chuẩn bị nói chuyện — không gửi khách, không pháp lý. Sai sót thấp rủi ro; CSM vẫn đọc qua. Nhưng brief KHÔNG được tự động ra quyết định "khách sắp churn, hạ giá đi" — đó là phán đoán của CSM (gate Q4–5).</li>
-      <li><b>Claude làm gì:</b> gọi 4 API, lọc 12 tháng dữ liệu xuống cái quan trọng, viết brief theo template, tính "điểm rủi ro" thô (usage giảm + ticket mở + hóa đơn trễ) — và <i>gắn cờ</i> để CSM xem, không kết luận. — <b>Để con người:</b> quyết định chiến lược cho cuộc gọi (upsell? nhượng bộ? escalate?) — CSM, dựa trên brief + hiểu biết quan hệ.</li>
-    </ul>
-    <div class="verdict go">✅ pursue — đây là hướng. Build chuẩn: MCP trước (dev, ~1 tuần cho 4 connector hoặc dùng connector sẵn có), skill sau (~2 ngày), test với 1 CSM 1 tuần, rollout.</div>
-  </div>
+  </section>
 
-  <div class="dir">
-    <div class="dhead">
-      <span class="dletter">C</span>
-      <span class="dtitle">Mua một "customer 360" SaaS (Catalyst, Vitally, Gainsight…)</span>
+  <section class="punch">
+    <div class="inner">
+      <p class="lead">Verdict</p>
+      <h2>Đúng là vấn đề AI — nên đừng "dùng AI từng lần". <span class="uo">Dựng một môi trường một lần.</span></h2>
+      <p>MCP nối 4 hệ thống + skill <code>/account-brief</code> + ranh giới rõ (Claude tổng hợp, CSM quyết). Bắt đầu từ Direction B: dev làm MCP trước, skill sau, test với 1 CSM một tuần.</p>
+      <p>Đánh đổi bạn chấp nhận: ~1.5 tuần dev time bây giờ — đổi lấy ~0.4 FTE/năm vĩnh viễn + NRR tốt hơn. Và kỷ luật giữ ranh giới: cái brief tốt đến mấy cũng không thay phán đoán của CSM về cuộc gọi.</p>
     </div>
-    <p>Có sản phẩm sẵn làm việc này.</p>
-    <div class="verdict caveat">⚠️ pursue with caveat — chạy được, nhưng: 20–60k$/năm license, setup 2–3 tháng, và bạn vẫn phải config nó đọc đúng những gì cần. Với team dev 8 người + chỉ cần 4 connector + 1 skill, build (Direction B) rẻ hơn và đúng nhu cầu hơn. Đánh giá lại nếu Direction B kéo dài quá 3 tuần.</div>
-  </div>
+  </section>
 
-  <h2 class="sec">Thiết kế môi trường (Direction B)</h2>
-  <div class="env">
-    <div class="erow"><span class="ekey">Bề mặt</span><span class="eval"><b>skill + MCP</b> — <code>/account-brief</code> (skill, dùng được trong Cowork bởi CSM không kỹ thuật) + MCP server nối Zendesk/HubSpot/Stripe/Mixpanel (dev build, hoặc connector sẵn). Sau: bọc thành <b>Routine</b> chạy đêm trước mỗi renewal call.</span></div>
-    <div class="erow"><span class="ekey">Kết nối</span><span class="eval">Zendesk (ticket) · HubSpot (CRM notes, email, contract status) · Stripe (billing/overdue) · Mixpanel (usage trend) · lịch renewal call (để Routine biết khi nào sinh brief).</span></div>
-    <div class="erow"><span class="ekey">Skill dùng lại</span><span class="eval"><code>/account-brief {tên khách}</code> → brief 1 trang theo template cố định: hợp đồng · usage trend · 3 ticket gần nhất + open · escalations · billing flags · risk score + lý do · 3 câu nên hỏi.</span></div>
-    <div class="erow"><span class="ekey">Ranh giới</span><span class="eval">Claude đọc + tổng hợp + gắn cờ rủi ro. Claude KHÔNG quyết: upsell/nhượng bộ/escalate — đó là CSM. Brief luôn được CSM đọc qua trước cuộc gọi (không "tự động hành động").</span></div>
-    <div class="erow"><span class="ekey">Còn TBD</span><span class="eval">Dùng MCP tự build hay connector có sẵn cho từng tool (dev đánh giá tuần 1); risk-score formula cần CSM góp ý 2–3 vòng trước khi tin.</span></div>
-  </div>
+  <details class="detail">
+    <summary>Khung 7 ô đầy đủ (cho ai muốn xem chi tiết)</summary>
+    <div class="canvas">
+      <div class="field"><div class="fnum">01 · TRIỆU CHỨNG</div><h4>Cái nhìn thấy được</h4><p>Mỗi renewal call, CSM tự đọc lại ticket 12 tháng + email + CRM + usage + hóa đơn + escalations · ~45–60 phút/call · ~20 call/tuần ≈ 15–18h/tuần.</p></div>
+      <div class="field"><div class="fnum">02 · AI CHỊU + TẦN SUẤT</div><h4>4 CSM</h4><p>~5 call/người/tuần × ~50 phút ≈ ~4h/người/tuần. + QBR: ~8/quý × ~2h chuẩn bị.</p></div>
+      <div class="field"><div class="fnum">03 · WORKAROUND</div><h4>Hiện tại</h4><p>5 tab (Zendesk, HubSpot, Stripe, Mixpanel) + một Google Doc "account brief" tự gõ, thường lỗi thời. Hiếm khi update sau call.</p></div>
+      <div class="field"><div class="fnum">04 · GỐC RỄ</div><h4>Nút thắt thật</h4><p>Thông tin phân tán across 5 hệ thống, không ai tổng hợp · không phải thiếu người / incentive · data sạch, có API — không phải data-cleanup project.</p></div>
+      <div class="field"><div class="fnum">05 · KHÔNG LÀM GÌ THÌ MẤT GÌ</div><h4>12 tháng</h4><p>4 × ~4h × 48 tuần ≈ ~768h/năm ≈ ~0.4 FTE ≈ ~28k$/năm + NRR (102→105 ≈ ~180k$ ARR) → tổng ~200k$+/năm.</p></div>
+      <div class="field"><div class="fnum">06 · "XONG" 30 NGÀY</div><h4>Quan sát được</h4><p>Gõ tên khách → brief 1 trang trong 60s (hợp đồng · usage trend · ticket · escalations · billing · risk + lý do · 3 câu nên hỏi) · chuẩn bị 45 phút → &lt;10 phút.</p></div>
+      <div class="field"><div class="fnum">07 · BỐI CẢNH</div><h4>60 người · cuối Series A · SaaS B2B</h4><p>Zendesk · HubSpot · Stripe · Mixpanel · Google Workspace · Slack · Linear · team dev 8 người · tất cả tool có API.</p></div>
+    </div>
+  </details>
 
-  <h2 class="sec">Verdict</h2>
-  <p class="finalverdict">Đây là vấn đề AI thật — nút thắt là đọc/tổng hợp, lặp đủ nhiều, data có sẵn, giá trị 200k$+/năm. Và giải pháp đúng KHÔNG phải "CSM hỏi Claude từng lần" — là <b>dựng một môi trường một lần</b>: MCP nối 4 hệ thống + skill <code>/account-brief</code> + ranh giới rõ (Claude tổng hợp, CSM quyết). Bắt đầu từ Direction B: dev làm MCP trước, skill sau, test với 1 CSM 1 tuần. Đánh đổi bạn chấp nhận: ~1.5 tuần dev time bây giờ (đổi lấy 0.4 FTE/năm vĩnh viễn + NRR tốt hơn) — và kỷ luật giữ ranh giới: cái brief tốt đến mấy cũng không thay phán đoán của CSM về cuộc gọi.</p>
-
-  <p class="demonote"><b>Cách dùng file này trong demo:</b> đọc qua 7 ô (nhanh) → chỉ vào gate verdict: ✅ vấn đề AI thật (khác ví dụ 1!) → rồi chỉ vào phần "Thiết kế môi trường": "thấy chưa — nó không nói 'dùng AI'. Nó nói: dựng skill <code>/account-brief</code> + MCP nối 4 hệ thống + ranh giới 'Claude tổng hợp, CSM quyết'. Cụ thể. Một lần. Cả team CS dùng mãi. Đó là khác biệt giữa 'use case' và 'môi trường'."</p>
-
-  <nav class="refnav">
+  <nav class="storyfoot">
     <a href="example-1.html">← Ví dụ 1 · báo giá chậm (❌ không phải AI — sửa quy trình)</a>
     <span class="dot">·</span>
     <a href="../slides/slides.html">← Slides</a>
   </nav>
 
-</div>
+<script>
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('reveal'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.chapter').forEach(c => { c.classList.remove('reveal'); io.observe(c); });
+</script>
 </body>
 </html>
