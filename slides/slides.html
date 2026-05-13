@@ -100,6 +100,18 @@
   }
 
   /* ===== HERO / COVER / THANK-YOU (dark, centered) ===== */
+  /* thanks slide layout */
+  .thanks-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .thanks-left { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .thanks-left .eyebrow { font-family: var(--font-mono); font-size: 13.5px; letter-spacing: 0.15em; color: var(--orange); text-transform: uppercase; }
+  .thanks-left h1 { font-size: clamp(2.6rem, 5.8vw, 4.6rem); line-height: 1.04; margin: 0; }
+  .thanks-image { display: flex; align-items: center; justify-content: center; }
+  .thanks-image img { width: 100%; max-width: 560px; height: auto; border-radius: var(--radius); }
+  @media (max-width: 900px) {
+    .thanks-wrap { grid-template-columns: 1fr; gap: 24px; }
+    .thanks-image { order: -1; }
+  }
+
   .hero-stage { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
   .hero-stage .eyebrow { font-family: var(--font-mono); font-size: 13.5px; letter-spacing: 0.15em; color: var(--orange); text-transform: uppercase; }
   .hero-stage h1 { font-size: clamp(2.8rem, 6.4vw, 5.4rem); line-height: 1.02; margin: 0; }
@@ -1281,18 +1293,10 @@
   <!-- type: hero -->
   <section class="slide dark" id="slide-thanks" data-title="Cảm ơn">
     <span class="slide-num"></span>
-    <div class="wrap">
-      <div class="hero-stage">
+    <div class="wrap thanks-wrap">
+      <div class="thanks-left">
         <span class="eyebrow">Cảm ơn</span>
         <h1>Đi từ <span class="grad-word">vấn đề</span>.<br/>Rồi dựng môi trường.</h1>
-        <p class="lede big" style="opacity:0.9">Bookmark cái Gist — tối nay chạy nó cho vấn đề lớn nhất của bạn. Ai pitch "mình nên dùng AI làm X" → chạy 5 câu gate trước khi duyệt tiền.</p>
-        <div class="setup-stage" style="align-items:flex-start; padding-top:8px">
-          <div class="qr-box" style="width:clamp(140px,18vw,180px); background:rgba(255,255,255,0.92)">
-            <img src="https://go.bnqtoan.workers.dev/qr/dinh-vande" alt="QR — go.bnqtoan.workers.dev/dinh-vande" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <div class="qr-fallback" style="display:none">dinh-vande</div>
-          </div>
-          <div class="url">go.bnqtoan.workers.dev/dinh-vande</div>
-        </div>
         <div class="ty-contact">
           <b>Tony Bùi</b><span class="dot">·</span>
           <a href="https://www.linkedin.com/in/bnqtoan/" target="_blank" rel="noopener">linkedin.com/in/bnqtoan</a><span class="dot">·</span>
@@ -1300,7 +1304,10 @@
           <a href="http://arealisticdreamer.com/" target="_blank" rel="noopener">arealisticdreamer.com</a>
         </div>
       </div>
-      <div class="stage-strip">▸ Slide đóng. Để nó đứng yên trong lúc Q&A. Nếu hết Q&A — quay lại slide gate hoặc slide "5 bề mặt" cho ai chưa chụp kịp. (Slide tiếp theo — setup/QR — là slide riêng cho giờ nghỉ TRƯỚC slot, không thuộc 20 phút.)</div>
+      <div class="thanks-image">
+        <img src="images/slide-thanks.png" alt="Cảm ơn — cây đinh đóng gọn, đường nối tới bàn làm việc đã thiết kế, hai bóng người đi cùng trên lớp AI" onerror="this.style.display='none'" />
+      </div>
+      <div class="stage-strip">▸ Slide đóng. Để nó đứng yên trong lúc Q&A. Nếu hết Q&A — quay lại slide "5 bề mặt" (slide 13) hoặc slide gate (slide 8) cho ai chưa chụp kịp.</div>
     </div>
   </section>
 
