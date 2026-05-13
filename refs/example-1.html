@@ -50,17 +50,17 @@
     <div class="verdicts">
       <div class="vpill go"><span class="vm">✅</span><span><b>A · Sửa quy trình</b> — viết pricing rule + bỏ bước duyệt cho 90% deal. <em>Nút thắt là một quyết định chưa ai chốt + một bước approval thừa — không phải đọc/viết/tổng hợp.</em> Một buổi work, chi phí gần 0, giải quyết ~90% độ chậm.</span></div>
       <div class="vpill caveat"><span class="vm">⚠️</span><span><b>B · Mua CPQ tool trong HubSpot</b> — làm "soạn 30 phút" thành "soạn 10 phút". Tiết kiệm 20 phút trên một quy trình 2 ngày. Đáng làm <b>SAU</b> A, không phải thay.</span></div>
-      <div class="vpill park"><span class="vm">🅿️</span><span><b>C · Build "AI quoting tool"</b> (cái founder muốn) — AI sinh báo giá nhanh hơn, nhưng bottleneck là <b>DUYỆT, không phải SINH</b>. AI cũng cần pricing rule viết ra trước — tức là A là điều kiện của C, không phải thay thế. Park đến khi A chạy xong.</span></div>
+      <div class="vpill caveat"><span class="vm">⚠️</span><span><b>C · AI sinh báo giá <em>theo rule</em></b> — chỉ làm <b>SAU khi</b> A xong. Lúc đó pricing rule đã là spec rõ ràng → skill <code>/build-quote</code> + MCP HubSpot đọc deal data → AI sinh báo giá theo rule, rep review nhanh, deal lớn vẫn Manager duyệt. Đây là <b>đòn bẩy đúng nghĩa</b> — không phải "AI tự nghĩ giá", mà "AI chạy theo khung con người đã thiết kế".</span></div>
     </div>
-    <p>Không có hướng nào cần một môi trường AI ngay bây giờ. Nếu sau này build C: <code>skill /build-quote</code> + MCP HubSpot, AI sinh nháp, Manager duyệt deal lớn — chuyện của quý sau.</p>
+    <p>Thứ tự quan trọng: <b>A trước, C sau.</b> Đảo lại = build AI trên cát — không có rule thì AI cũng đoán bậy, hoặc lại dồn câu hỏi vào Manager. Khi A đã xong, C không còn là "use case AI" tách rời — nó là cách <b>operationalize cái rule</b> để mỗi rep có cái nút bấm.</p>
   </section>
 
   <section class="punch">
     <div class="inner">
       <p class="lead">Verdict</p>
-      <h2>Đòn bẩy lớn nhất không phải AI — là <span class="uo">viết pricing rule ra</span> và bỏ bước duyệt cho 90% deal.</h2>
-      <p>Một buổi work, gần như không tốn gì, giải quyết phần lớn độ chậm (~96.000$/năm "rò rỉ" vì deal rớt do chậm). AI hay CPQ tool chỉ nhặt được phần "soạn 30 phút" — và chỉ nên đụng tới <em>sau khi</em> bạn đã sửa bước duyệt.</p>
-      <p>Đánh đổi bạn chấp nhận: Sales Manager phải buông bớt quyền duyệt và tin pricing rule. Đó là điều khó nhất — và là điều thật sự cần xảy ra.</p>
+      <h2>Đòn bẩy lớn nhất không phải AI — là <span class="uo">viết pricing rule ra</span> trước. Rồi AI chạy theo rule đó.</h2>
+      <p>Một buổi work để viết rule + bỏ bước duyệt cho 90% deal → giải quyết phần lớn độ chậm (~96.000$/năm "rò rỉ" vì deal rớt). Khi rule đã rõ → skill <code>/build-quote</code> + MCP HubSpot biến nó thành cái nút bấm cho cả team. <b>Đây là cái thứ tự đúng:</b> con người thiết kế khung → AI chạy trong khung.</p>
+      <p>Đánh đổi bạn chấp nhận: Sales Manager phải buông bớt quyền duyệt và tin pricing rule. Đó là điều khó nhất — và là điều thật sự cần xảy ra <em>trước</em> bất kỳ AI nào.</p>
     </div>
   </section>
 
