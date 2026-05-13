@@ -304,18 +304,40 @@ QUY TẮC:
 4. Theo bạn, gốc rễ là gì? Đoán một cái: quy trình hở? thiếu công cụ? động lực sai? thiếu người? (Đoán thô cũng được, nhưng phải chốt một cái.)
 5. Không làm gì thì 12 tháng tới mất gì? Tiền, giờ, deal mất, khách rời, rủi ro, hay tinh thần. Nếu không định lượng được — nói vậy; đó là tín hiệu vấn đề này có thể chưa phải lớn nhất.
 6. &quot;Xong&quot; trong 30 ngày trông thế nào? Một trạng thái quan sát được — một con số, một cái ai đó chỉ tay vào được. (&quot;Báo giá xong dưới 1 tiếng&quot; — không phải &quot;mọi thứ đỡ hơn&quot;.)
-7. Bối cảnh công ty: quy mô (bao nhiêu người), giai đoạn, ngành, và các công cụ chính bạn đang dùng (CRM, kế toán, quản lý dự án, chat, tài liệu)?
+7. Bối cảnh công ty + cách triển khai. Trả lời 3 phần một lần:
+   (a) Quy mô (bao nhiêu người), giai đoạn, ngành.
+   (b) Các công cụ chính đang dùng (CRM, kế toán, quản lý dự án, chat, tài liệu — tên cụ thể nếu nhớ).
+   (c) Vấn đề này là CÁ NHÂN bạn dùng, hay cả TEAM dùng? Nếu team — bạn THOẢI MÁI ĐẾN ĐÂU với &quot;build tool riêng&quot; (skill / MCP / tích hợp)?
+       - thấp: chỉ muốn mua/dùng SaaS có sẵn, không muốn ai phải custom
+       - trung bình: OK với SaaS có MCP/API mở, sẵn sàng nối thêm AI sau
+       - cao: sẵn sàng để dev nội bộ (hoặc thuê ngoài) build skill/MCP/tool custom
 
-SAU KHI TÔI XÁC NHẬN 7 Ô, làm 3 việc:
+SAU KHI TÔI XÁC NHẬN 7 Ô, làm 4 việc:
 
 VIỆC 1 — Viết lại &quot;BẢN MÔ TẢ VẤN ĐỀ&quot; gọn gàng theo 7 ô trên (mỗi ô vài dòng). Đây là thứ tôi sẽ copy về.
 
-VIỆC 2 — Đề xuất 2-3 HƯỚNG GIẢI khác nhau VỀ BẢN CHẤT. Ví dụ:
-  - một hướng sửa QUY TRÌNH / TỔ CHỨC (đổi ai làm, làm khi nào, hoặc đổi động lực — không cần phần mềm)
-  - một hướng MUA / CẤU HÌNH công cụ có sẵn (ít phải build)
-  - một hướng DỰNG MÔI TRƯỜNG AI (không phải &quot;dùng AI&quot; chung chung, mà chỉ rõ: setup kiểu gì)
-  Nếu cái giá của việc không làm gì (câu 5) là thấp, thêm hướng thứ tư: &quot;Không làm gì — chấp nhận cái giá đó.&quot;
+VIỆC 2 — Đề xuất 2-3 HƯỚNG GIẢI khác nhau VỀ BẢN CHẤT — và CHỌN HƯỚNG ƯU TIÊN theo bối cảnh ở câu 7c:
+
+  Các hướng có thể có:
+  - sửa QUY TRÌNH / TỔ CHỨC (đổi ai làm, làm khi nào, đổi động lực — không cần phần mềm)
+  - MUA / CẤU HÌNH công cụ có sẵn (SaaS, ít phải build)
+  - DỰNG MÔI TRƯỜNG AI (chỉ rõ setup kiểu gì — không nói &quot;dùng AI&quot; chung chung)
+  - KHÔNG LÀM GÌ (nếu cái giá ở câu 5 là thấp)
+
+  QUY TẮC THỨ TỰ — quan trọng:
+  - Nếu câu 7c = CÁ NHÂN → ưu tiên hướng nằm trong HỆ SINH THÁI CLAUDE TRƯỚC (chat / Cowork / skill). Chỉ đề xuất tool ngoài nếu Claude eco thật sự không kham nổi việc đó.
+  - Nếu câu 7c = TEAM → vẫn cân nhắc Claude eco, nhưng MỞ RA tool bên ngoài tuỳ &quot;comfort with custom&quot;:
+      • thấp → ưu tiên SaaS có sẵn, chấp nhận chưa nối AI
+      • trung bình → ưu tiên SaaS CÓ MCP / API mở (để tương lai nối agent)
+      • cao → mở cả hướng skill+MCP custom
+
   Với hướng AI: hãy CỤ THỂ — nó là việc kiểu gì (ví dụ: &quot;phân tích tài chính P&amp;L&quot;, &quot;tổng hợp lịch sử khách trước renewal call&quot;, &quot;phân loại feedback khách&quot;, &quot;chuẩn bị tài liệu họp&quot;, &quot;review hợp đồng&quot;, &quot;digest pipeline hàng tuần&quot;...), output ra cái gì, ai dùng. Đừng nói &quot;AI sẽ giúp&quot; — nói &quot;AI làm X, ra Y, người Z dùng&quot;.
+
+  Với hướng MUA / CẤU HÌNH: kèm 2-3 LỰA CHỌN CỤ THỂ trong category đó, theo thứ tự:
+  1. **Vendor Việt Nam trước** nếu category có lựa chọn VN thật (ví dụ: CRM VN → Misa, Base.vn, Bitrix VN; bán lẻ → KiotViet, Sapo; HR → Tanca, Base HRM; kế toán → MISA SME, Fast)
+  2. **Regional / SEA** nếu VN chưa có lựa chọn fit (Zoho, Lark, Notion plans SEA)
+  3. **Global** nếu cần (HubSpot, Salesforce, Linear, Notion enterprise)
+  Mỗi lựa chọn ghi: tên · 1 câu vì sao fit framing này · có MCP/API mở không (yes/no/không rõ) · price tier (free/$/$$/$$$). NẾU dùng được web search — hãy search để check tên + URL + giá hiện tại. NẾU không search được (free tier không có) — dùng kiến thức của bạn và GHI RÕ &quot;list này dựa trên kiến thức của tôi tới khoảng [tháng/năm], kiểm tra lại trước khi mua&quot;.
 
 VIỆC 3 — Với MỖI hướng, chấm điểm trên 5 CÂU &quot;ĐÂY CÓ PHẢI VẤN ĐỀ AI KHÔNG&quot;:
   1. Nút thắt thật sự là phán đoán / ngôn ngữ / tổng hợp — hay là quyết định còn thiếu / người còn thiếu / một project dọn dữ liệu / động lực sai?
@@ -338,6 +360,10 @@ VIỆC 4 — NẾU một hướng là &quot;dựng môi trường AI&quot; và n
   Nếu chưa điền đủ 4 thứ — nói thẳng cái nào còn TBD. Đó là việc cần làm rõ tiếp theo.
 
 CUỐI CÙNG — một đoạn ngắn: bạn sẽ bắt đầu từ hướng nào, và đánh đổi khó nhất là gì. NẾU hướng mạnh nhất KHÔNG phải AI, hãy nói thẳng: &quot;Đòn bẩy lớn nhất của bạn ở đây không phải AI — mà là [X]. AI nhặt phần [Y] sau khi bạn sửa cái kia.&quot;
+
+VÀ Ở CUỐI OUTPUT — luôn kèm một dòng disclaimer (in nhỏ, italic):
+
+&gt; *Lưu ý: phân tích này dựa trên thông tin tổng quan bạn cung cấp trong 7 câu — không thay thế tư vấn chuyên sâu (về quy trình, công nghệ, pháp lý, hay vendor). Trước khi quyết định mua / build / thuê — đối chiếu với bối cảnh đầy đủ + người trong cuộc + (nếu cần) consultant chuyên ngành.*
 
 Bắt đầu bằng câu hỏi 1. Đừng nói gì khác trước đó.</pre>
   </details>
