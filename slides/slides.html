@@ -100,6 +100,64 @@
   }
 
   /* ===== HERO / COVER / THANK-YOU (dark, centered) ===== */
+  /* ===== role slides (thesis + CEO/CTO/COO/CFO) ===== */
+  .role-wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 44px; align-items: center; }
+  .role-left { display: flex; flex-direction: column; gap: 14px; }
+  .role-left h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.12; margin: 0; }
+  .role-left .lede { margin: 0; font-size: 15.5px; line-height: 1.55; }
+  .role-left .role-bullets { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
+  .role-left .rb { display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-head); font-size: 15px; }
+  .role-left .rb-mark {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.14em; color: var(--orange);
+    flex-shrink: 0; margin-top: 5px; min-width: 22px;
+  }
+  .role-left .role-pain {
+    background: rgba(192,122,110,0.07); border-left: 3px solid var(--red);
+    padding: 10px 14px; border-radius: 6px;
+    font-family: var(--font-body); font-size: 14.5px; line-height: 1.5;
+  }
+  .role-left .role-lever {
+    background: rgba(120,140,93,0.08); border-left: 3px solid var(--green);
+    padding: 10px 14px; border-radius: 6px;
+    font-family: var(--font-body); font-size: 14.5px; line-height: 1.5;
+  }
+  .role-left .role-pain b, .role-left .role-lever b { color: var(--dark); }
+  .role-left .role-tools {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-top: 4px;
+  }
+  .role-left .rt-label {
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid);
+    margin-right: 4px;
+  }
+  .role-left .rt-pill {
+    font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border: 1px solid var(--light-gray); border-radius: 999px;
+    color: var(--orange-deep); background: rgba(217,119,87,0.05);
+  }
+  .role-image {
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(217,119,87,0.04); border: 1.5px dashed rgba(217,119,87,0.4);
+    border-radius: var(--radius);
+    aspect-ratio: 16/9; padding: 6px;
+    overflow: hidden;
+  }
+  .role-image img { width: 100%; height: 100%; object-fit: contain; }
+  .role-image:has(img:not([style*="display: none"])) {
+    background: transparent; border: none; padding: 0;
+  }
+  .role-image .placeholder-label {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--orange-deep); opacity: 0.7; text-align: center;
+  }
+  .role-image:has(img:not([style*="display: none"])) .placeholder-label { display: none; }
+  @media (max-width: 900px) {
+    .role-wrap { grid-template-columns: 1fr; gap: 20px; }
+    .role-image { aspect-ratio: 16/10; }
+  }
+
   /* thanks slide layout */
   .thanks-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   .thanks-left { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
@@ -716,7 +774,7 @@
     <div class="wrap">
       <div class="hero-split">
         <span class="eyebrow">CXO Club · 14/05/2026 · 20 phút · Tiếng Việt</span>
-        <h1><span class="nowrap">Cây búa <span class="grad-word">Claude</span></span> <span class="nowrap">trong tối ưu năng suất</span> <span class="nowrap">dành cho sếp.</span></h1>
+        <h1><span class="nowrap">Cây búa <span class="grad-word">Claude</span></span> <span class="nowrap">trong tối ưu năng suất</span> <span class="nowrap">dành cho CxO.</span></h1>
         <p class="lede">"Tối ưu năng suất" thật ra không nằm ở chuyện làm việc cũ nhanh hơn. Mà là biết <b>việc nào thật sự đáng để làm</b>, dựng sẵn hệ thống cho nó <b>một lần</b>, rồi <b>bỏ bớt</b> những thứ không cần thiết. 20 phút này nói về điều đó — không phải vài mẹo vặt để làm nhanh hơn.</p>
         <div class="image-placeholder" data-image-prompt="Anthropic-brand flat editorial illustration, clean line work, restrained orange accent on a dark near-black background, no faces. A single elegant claw hammer in orange line work on the right, with generous empty dark space on the left for a title overlay. The hammer feels like a precision instrument; a few small objects (a screw, a coiled spring) very faintly visible near the head, understated. A sophisticated C-suite hero title card.">
           <img src="images/slide-title-hammer.png" alt="Cây búa Claude — title card" onerror="this.style.display='none'" />
@@ -792,6 +850,127 @@
       <p class="lede" style="margin-top:18px"><i>Ai cũng cầm được</i> — không cần kỹ sư, không cần hạ tầng. Phần khó: (a) biết đập vào đâu, (b) đừng đập từng cái một.</p>
       <div class="stage-strip">▸ Beat 1 cont. Không demo — chỉ nói. Nhấn cột phải: "Claude không chỉ soạn văn bản — nó VIẾT phần mềm. Cái internal tool anh/chị xếp hàng chờ IT 3 tháng — giờ làm trong buổi chiều." (Lưu ý: KHÔNG nói "AI rẻ" — ở VN Claude không rẻ. Điểm là "cái sàn nâng lên / ai cũng với tới được".) → pivot sang Beat 2: "vậy đâu là cái đinh, đâu là con ốc?"</div>
     </div>
+  </section>
+
+  <!-- ============ SLIDE · THESIS — CxO là điểm đòn bẩy ============ -->
+  <!-- type: thesis -->
+  <section class="slide" id="slide-2a" data-title="CxO là điểm đòn bẩy">
+    <span class="slide-num"></span>
+    <div class="wrap role-wrap">
+      <div class="role-left">
+        <div class="slide-kicker">Tại sao là CxO?</div>
+        <h1>Performance của CxO ≠ làm nhiều hơn. Là <span class="u-orange">đòn bẩy</span>.</h1>
+        <p class="lede">Tối ưu một CxO khác tối ưu một nhân viên. Vì CxO có 3 thứ team không có — và đó chính là chỗ AI tạo đòn bẩy thật, nếu mình dùng đúng.</p>
+        <div class="role-bullets">
+          <div class="rb"><span class="rb-mark">01</span><div><b>Bối cảnh đầy đủ</b> — biết "tại sao" của mọi việc</div></div>
+          <div class="rb"><span class="rb-mark">02</span><div><b>Quyền quyết</b> — không phải xin ai để chốt</div></div>
+          <div class="rb"><span class="rb-mark">03</span><div><b>Động lực gánh hệ lụy</b> — sai là mình mất, không phải team mất</div></div>
+        </div>
+        <p class="lede" style="margin-top:18px"><b>20 phút tới</b> — không phải dạy AI cho cả công ty. Là cho mình một <b>khung</b> để tối ưu cái đòn bẩy đó. 4 slide tiếp theo: khung này nhìn từ vai trò của bạn (CEO · CTO · COO · CFO).</p>
+      </div>
+      <div class="role-image">
+        <img src="images/slide-thesis-leverage.png" alt="Một người với 3 lợi thế (bối cảnh, quyền, động lực) bẩy một khối lớn (công ty)" onerror="this.style.display='none'" />
+        <div class="placeholder-label">[Image · CxO + 3 lợi thế bẩy công ty]</div>
+      </div>
+    </div>
+    <div class="stage-strip">▸ Beat 1.7 · ~1.5 min. <b>Thiết lập điểm tựa.</b> "Tại sao mình ngồi đây nói chuyện này với CxO — không phải với team Ops?" Đọc 3 dòng. Nhấn dòng 3 (gánh hệ lụy) — đây là lý do CxO ra quyết định khác team. Câu chuyển: "4 slide tiếp theo — khung này khi mình là CEO / CTO / COO / CFO."</div>
+  </section>
+
+  <!-- ============ SLIDE · CEO — prioritization + delegation ============ -->
+  <!-- type: role -->
+  <section class="slide" id="slide-2-ceo" data-title="CEO — prioritization + delegation">
+    <span class="slide-num"></span>
+    <div class="wrap role-wrap">
+      <div class="role-left">
+        <div class="slide-kicker">CxO · CEO</div>
+        <h1>Cắt việc <span class="u-orange">đúng</span> — không phải làm việc <span class="u-orange">nhiều</span>.</h1>
+        <div class="role-pain"><b>Nỗi đau:</b> mỗi đề xuất đều có lý. Không biết cắt cái nào → ôm hết → team ngợp.</div>
+        <div class="role-lever"><b>Đòn bẩy:</b> AI giúp framing nhanh → ra quyết định "<b>ngừng làm</b>" thay vì "thêm việc". Một CEO cắt 5 việc/tuần = 250 việc/năm cả team không phải gánh.</div>
+        <div class="role-tools">
+          <span class="rt-label">Tools dùng trong khung:</span>
+          <span class="rt-pill">5-câu gate</span>
+          <span class="rt-pill">ma trận V×F</span>
+        </div>
+      </div>
+      <div class="role-image">
+        <img src="images/slide-role-ceo.png" alt="CEO đứng trước cây quyết định, cắt nhánh không quan trọng, giữ nhánh ưu tiên (cam)" onerror="this.style.display='none'" />
+        <div class="placeholder-label">[Image · CEO · cắt nhánh cây quyết định]</div>
+      </div>
+    </div>
+    <div class="stage-strip">▸ Beat 1.8 · ~45s. "CEO không thiếu việc — thiếu kỷ luật cắt việc." AI = framing tool để cắt nhanh, không phải tool để làm nhiều. Câu chuyển: "→ CTO."</div>
+  </section>
+
+  <!-- ============ SLIDE · CTO — build / buy / MCP-readiness ============ -->
+  <!-- type: role -->
+  <section class="slide" id="slide-2-cto" data-title="CTO — build / buy / MCP-readiness">
+    <span class="slide-num"></span>
+    <div class="wrap role-wrap">
+      <div class="role-left">
+        <div class="slide-kicker">CxO · CTO</div>
+        <h1>Build hay Buy — và "<span class="u-orange">platform có mở cửa cho agent</span> không?"</h1>
+        <div class="role-pain"><b>Nỗi đau:</b> team muốn build hết. Vendor pitch mỗi tuần. Quyết định build/buy theo cảm tính.</div>
+        <div class="role-lever"><b>Đòn bẩy:</b> AI gate trước khi viết dòng code đầu tiên. Tiêu chí mua mới: <b>"có MCP / API mở không?"</b> Tool đóng cửa với agent = nợ kỹ thuật trong 12 tháng.</div>
+        <div class="role-tools">
+          <span class="rt-label">Tools dùng trong khung:</span>
+          <span class="rt-pill">5-câu gate</span>
+          <span class="rt-pill">5 bề mặt</span>
+          <span class="rt-pill">4 yếu tố môi trường</span>
+        </div>
+      </div>
+      <div class="role-image">
+        <img src="images/slide-role-cto.png" alt="Bàn làm việc với 3 lựa chọn build/buy/wait, biểu tượng plug+socket cam = MCP-readiness" onerror="this.style.display='none'" />
+        <div class="placeholder-label">[Image · CTO · build/buy/wait + plug cam]</div>
+      </div>
+    </div>
+    <div class="stage-strip">▸ Beat 1.9 · ~45s. "CTO sai chỗ build/buy là mất quý. AI gate trước, MCP-readiness là tiêu chí mua mới." Câu chuyển: "→ COO."</div>
+  </section>
+
+  <!-- ============ SLIDE · COO — process redesign before AI ============ -->
+  <!-- type: role -->
+  <section class="slide" id="slide-2-coo" data-title="COO — sửa quy trình trước, AI sau">
+    <span class="slide-num"></span>
+    <div class="wrap role-wrap">
+      <div class="role-left">
+        <div class="slide-kicker">CxO · COO</div>
+        <h1>Sửa quy trình <span class="u-orange">trước</span>. Rồi AI chạy theo.</h1>
+        <div class="role-pain"><b>Nỗi đau:</b> ai cũng pitch "tự động hóa". Nguy cơ → tự động hóa cái sai → scale cái lỗi.</div>
+        <div class="role-lever"><b>Đòn bẩy:</b> AI giúp lộ ra <b>spec rõ ràng</b> của quy trình. Sửa quy trình xong → AI mới là cái lớp chạy ở trên. Đây là cái thứ tự đúng (xem VD báo giá trong refs).</div>
+        <div class="role-tools">
+          <span class="rt-label">Tools dùng trong khung:</span>
+          <span class="rt-pill">5-câu gate</span>
+          <span class="rt-pill">4 yếu tố môi trường</span>
+        </div>
+      </div>
+      <div class="role-image">
+        <img src="images/slide-role-coo.png" alt="Flow 5 node, node giữa được sửa (cam, có cờ-lê), AI là lớp phía trên flow đã sửa" onerror="this.style.display='none'" />
+        <div class="placeholder-label">[Image · COO · sửa node giữa flow, AI là lớp trên]</div>
+      </div>
+    </div>
+    <div class="stage-strip">▸ Beat 2.0 · ~45s. "COO không tự động hóa AI lên cái sai." Sửa quy trình trước → AI là lớp chạy trên, không phải thay thế. Câu chuyển: "→ CFO."</div>
+  </section>
+
+  <!-- ============ SLIDE · CFO — ROI gate before budget ============ -->
+  <!-- type: role -->
+  <section class="slide" id="slide-2-cfo" data-title="CFO — gate trước ngân sách">
+    <span class="slide-num"></span>
+    <div class="wrap role-wrap">
+      <div class="role-left">
+        <div class="slide-kicker">CxO · CFO</div>
+        <h1>Mỗi pitch AI phải qua <span class="u-orange">5-câu gate</span> trước khi qua bàn CFO.</h1>
+        <div class="role-pain"><b>Nỗi đau:</b> ai cũng xin tiền build AI. Không biết cái nào thật, cái nào hype.</div>
+        <div class="role-lever"><b>Đòn bẩy:</b> 5-câu gate trở thành <b>budget filter</b>. Ma trận V×F trở thành <b>portfolio view</b>. Đề xuất rớt gate → không duyệt, dù pitch hay đến đâu.</div>
+        <div class="role-tools">
+          <span class="rt-label">Tools dùng trong khung:</span>
+          <span class="rt-pill">5-câu gate</span>
+          <span class="rt-pill">ma trận V×F</span>
+        </div>
+      </div>
+      <div class="role-image">
+        <img src="images/slide-role-cfo.png" alt="Cân hai bên: case proposals vs 5-gate filter, kim cân lệch về gate (cam)" onerror="this.style.display='none'" />
+        <div class="placeholder-label">[Image · CFO · cân case vs gate]</div>
+      </div>
+    </div>
+    <div class="stage-strip">▸ Beat 2.1 · ~45s. "CFO duyệt AI thì duyệt cái gate trước. Mỗi pitch dán vào prompt, chạy 5 câu, rớt = từ chối." Câu chuyển: "→ giờ mình mở khung tổng quan."</div>
   </section>
 
   <!-- ============ SLIDE · CÁI KHUNG (framework roadmap, shown early) ============ -->
@@ -1102,7 +1281,7 @@
         <div class="door hero-door">
           <div class="d-name">Cowork</div>
           <div class="d-when"><b>= trợ lý ngồi cạnh bàn bạn.</b> Thấy file, mở mail, soạn cùng bạn. Không code.</div>
-          <div class="d-tag">mặc định cho sếp</div>
+          <div class="d-tag">mặc định cho CxO</div>
         </div>
         <div class="door hero-door">
           <div class="d-name">Skill + MCP</div>
