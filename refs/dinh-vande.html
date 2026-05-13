@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Định nghĩa vấn đề — trước khi với tay lấy AI</title>
+<meta name="description" content="Phone prompt cho buổi CXO Club 2026-05-14. 7 câu giúp bạn framing một vấn đề thật + chấm gate AI/không-AI + đề xuất 2-3 hướng giải." />
+<meta name="theme-color" content="#faf9f5" />
+<style>
+  :root {
+    --dark: #141413;
+    --light: #faf9f5;
+    --mid: #b0aea5;
+    --light-gray: #e8e6dc;
+    --orange: #d97757;
+    --orange-deep: #c2654a;
+    --green: #788c5d;
+    --font-head: "Be Vietnam Pro", "Poppins", system-ui, sans-serif;
+    --font-body: "Lora", "Be Vietnam Pro", Georgia, serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --radius: 14px;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&family=Lora:wght@400;600&display=swap");
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--light); color: var(--dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+  }
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--font-head);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 16px;
+  }
+  h1 .u-orange {
+    background-image: linear-gradient(transparent 70%, rgba(217,119,87,0.45) 70%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .lede {
+    font-size: 16px;
+    color: var(--dark);
+    opacity: 0.9;
+    margin: 0 0 28px;
+  }
+  .lede b { color: var(--dark); opacity: 1; }
+
+  /* Steps */
+  .steps {
+    background: #fff;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin: 0 0 22px;
+  }
+  .steps ol {
+    list-style: none;
+    counter-reset: cc;
+    margin: 0; padding: 0;
+  }
+  .steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--light-gray);
+    counter-increment: cc;
+    font-family: var(--font-head);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+  .steps li:last-child { border-bottom: none; padding-bottom: 0; }
+  .steps li:first-child { padding-top: 0; }
+  .steps li::before {
+    content: counter(cc, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--orange);
+    flex-shrink: 0;
+    margin-top: 3px;
+    min-width: 20px;
+  }
+  .steps li b { font-weight: 700; }
+
+  /* Copy block */
+  .copy-card {
+    background: var(--dark);
+    color: var(--light);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    margin: 0 0 22px;
+  }
+  .copy-card .copy-label {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .copy-card .copy-label span.char-count { font-size: 10px; opacity: 0.7; }
+  .copy-card .copy-btn {
+    width: 100%;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.05s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .copy-card .copy-btn:hover { background: var(--orange-deep); }
+  .copy-card .copy-btn:active { transform: scale(0.98); }
+  .copy-card .copy-btn.copied {
+    background: var(--green);
+  }
+  .copy-card .copy-btn .icon {
+    width: 20px; height: 20px; flex-shrink: 0;
+  }
+  .copy-card .open-claude {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    padding: 12px;
+    background: transparent;
+    color: var(--light);
+    border: 1.5px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+  .copy-card .open-claude:hover { border-color: rgba(255,255,255,0.4); }
+  .copy-card .helper {
+    margin-top: 12px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--mid);
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Prompt preview (collapsible) */
+  details.prompt-details {
+    background: #fff;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius);
+    margin: 0 0 22px;
+    overflow: hidden;
+  }
+  details.prompt-details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 14px 18px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  details.prompt-details > summary::-webkit-details-marker { display: none; }
+  details.prompt-details > summary::after {
+    content: "+"; font-family: var(--font-mono); font-size: 22px; color: var(--orange); font-weight: 400;
+  }
+  details.prompt-details[open] > summary::after { content: "−"; }
+  details.prompt-details pre {
+    margin: 0;
+    padding: 16px 18px;
+    background: var(--light);
+    border-top: 1px solid var(--light-gray);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: var(--dark);
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  /* About block */
+  .about {
+    border-left: 3px solid var(--orange);
+    background: rgba(217,119,87,0.05);
+    padding: 14px 16px;
+    border-radius: 6px;
+    margin: 0 0 16px;
+  }
+  .about p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .about p + p { margin-top: 8px; }
+  .about b { color: var(--orange-deep); }
+
+  footer {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--light-gray);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--mid);
+    text-align: center;
+    line-height: 1.6;
+  }
+  footer a { color: var(--orange-deep); text-decoration: none; border-bottom: 1px solid currentColor; }
+
+  @media (min-width: 720px) {
+    main { padding: 60px 24px 80px; }
+    h1 { font-size: 2.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="kicker">CXO Club · 14·05·2026 · Tony Bùi</div>
+  <h1>Định nghĩa vấn đề <span class="u-orange">trước khi</span> với tay lấy AI.</h1>
+  <p class="lede">Trả lời 7 câu. Nhận lại <b>bản mô tả vấn đề + 2-3 hướng giải + chấm gate AI/không-AI.</b> Khoảng <b>8-12 phút.</b></p>
+
+  <div class="copy-card">
+    <div class="copy-label">
+      <span>Copy prompt rồi dán vào Claude</span>
+      <span class="char-count" id="charCount"></span>
+    </div>
+    <button class="copy-btn" id="copyBtn" type="button" onclick="copyPrompt()">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2"/>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+      </svg>
+      <span id="copyBtnText">Copy prompt</span>
+    </button>
+    <a class="open-claude" href="https://claude.ai/new" target="_blank" rel="noopener">→ Mở Claude (bản free OK)</a>
+    <div class="helper">Bấm Copy · mở Claude · dán · gửi · trả lời 7 câu.</div>
+  </div>
+
+  <ol class="steps">
+    <li><b>Bấm Copy</b> ở trên — prompt đã vào clipboard.</li>
+    <li>Bấm <b>"Mở Claude"</b> — tạo chat mới (đăng nhập nếu chưa).</li>
+    <li>Dán prompt vào, gửi. Claude sẽ hỏi câu 1.</li>
+    <li>Trả lời 7 câu — <b>mỗi câu một lần.</b> Ngắn gọn, thật.</li>
+    <li>Nhận lại: vấn đề đã framing + <b>2-3 hướng giải</b> + chấm gate AI/không-AI + môi trường đề xuất.</li>
+    <li>Muốn mổ xẻ trước phòng? <b>Giơ tay</b> — Tony tới.</li>
+  </ol>
+
+  <div class="about">
+    <p><b>Đây là cái gì?</b> Một prompt phẳng cho điện thoại — bản gọn của skill <code>/problem-frame</code>. Việc của nó: không cho bạn "chọn AI use case", mà ép bạn <b>định nghĩa một vấn đề thật</b> trước.</p>
+    <p>Nếu hướng giải mạnh nhất hóa ra <b>không phải AI</b> — nó nói thẳng. Đó là tính năng, không phải lỗi.</p>
+  </div>
+
+  <details class="prompt-details">
+    <summary>Xem prompt (nếu muốn đọc trước)</summary>
+    <pre id="promptText">Bạn là cố vấn giúp tôi ĐỊNH NGHĨA MỘT vấn đề lớn cho thật rõ — TRƯỚC khi tôi quyết định có dùng AI hay không. Coi AI như một cây búa: nó giỏi việc phán đoán, ngôn ngữ, tổng hợp — nhưng vô dụng với những thứ như &quot;thiếu một quyết định&quot;, &quot;thiếu người&quot;, &quot;động lực sai&quot;, &quot;dữ liệu chưa có&quot;, &quot;định giá sai&quot;. Việc của bạn là giúp tôi viết vấn đề ra rõ ràng, rồi nói thẳng AI có phải đúng công cụ không. Nếu không phải — hãy nói thẳng.
+
+QUY TẮC:
+- Hỏi tôi TỪNG CÂU MỘT theo thứ tự dưới đây. Đợi tôi trả lời rồi mới hỏi câu tiếp. Đừng hỏi gộp.
+- Nếu câu 1 tôi trả lời bằng một GIẢI PHÁP (&quot;tôi cần một công cụ AI làm X&quot;) thay vì một TRIỆU CHỨNG, hãy hỏi lại một lần: &quot;Đó là giải pháp. Vấn đề nó định sửa là gì — bạn nhìn thấy được gì?&quot;
+- Trả lời bằng tiếng Việt, giọng thân thiện, ngang hàng (xưng &quot;mình&quot; / gọi &quot;bạn&quot;). Không lên lớp.
+- Sau câu 7, tóm tắt lại 7 ô cho tôi xác nhận. Tôi sửa một lần, rồi bạn làm phần sau.
+
+7 CÂU HỎI:
+1. Vấn đề là gì? Một câu — TRIỆU CHỨNG bạn nhìn thấy được, không phải giải pháp bạn muốn. (Ví dụ đúng: &quot;Nhân viên sales mất 6 tiếng mỗi tuần làm báo giá bằng tay&quot;. Ví dụ sai: &quot;Mình cần một AI làm báo giá&quot;.)
+2. Ai chịu cái đau này, và bao lâu một lần? Vai trò nào, mấy người, mấy lần một tuần hoặc một tháng?
+3. Hiện tại đang chống chế thế nào? Người ta làm gì để xoay sở — bảng tính? một bạn junior gánh? hay sống chung với nó?
+4. Theo bạn, gốc rễ là gì? Đoán một cái: quy trình hở? thiếu công cụ? động lực sai? thiếu người? (Đoán thô cũng được, nhưng phải chốt một cái.)
+5. Không làm gì thì 12 tháng tới mất gì? Tiền, giờ, deal mất, khách rời, rủi ro, hay tinh thần. Nếu không định lượng được — nói vậy; đó là tín hiệu vấn đề này có thể chưa phải lớn nhất.
+6. &quot;Xong&quot; trong 30 ngày trông thế nào? Một trạng thái quan sát được — một con số, một cái ai đó chỉ tay vào được. (&quot;Báo giá xong dưới 1 tiếng&quot; — không phải &quot;mọi thứ đỡ hơn&quot;.)
+7. Bối cảnh công ty: quy mô (bao nhiêu người), giai đoạn, ngành, và các công cụ chính bạn đang dùng (CRM, kế toán, quản lý dự án, chat, tài liệu)?
+
+SAU KHI TÔI XÁC NHẬN 7 Ô, làm 3 việc:
+
+VIỆC 1 — Viết lại &quot;BẢN MÔ TẢ VẤN ĐỀ&quot; gọn gàng theo 7 ô trên (mỗi ô vài dòng). Đây là thứ tôi sẽ copy về.
+
+VIỆC 2 — Đề xuất 2-3 HƯỚNG GIẢI khác nhau VỀ BẢN CHẤT. Ví dụ:
+  - một hướng sửa QUY TRÌNH / TỔ CHỨC (đổi ai làm, làm khi nào, hoặc đổi động lực — không cần phần mềm)
+  - một hướng MUA / CẤU HÌNH công cụ có sẵn (ít phải build)
+  - một hướng DỰNG MÔI TRƯỜNG AI (không phải &quot;dùng AI&quot; chung chung, mà chỉ rõ: setup kiểu gì)
+  Nếu cái giá của việc không làm gì (câu 5) là thấp, thêm hướng thứ tư: &quot;Không làm gì — chấp nhận cái giá đó.&quot;
+  Với hướng AI: hãy CỤ THỂ — nó là việc kiểu gì (ví dụ: &quot;phân tích tài chính P&amp;L&quot;, &quot;tổng hợp lịch sử khách trước renewal call&quot;, &quot;phân loại feedback khách&quot;, &quot;chuẩn bị tài liệu họp&quot;, &quot;review hợp đồng&quot;, &quot;digest pipeline hàng tuần&quot;...), output ra cái gì, ai dùng. Đừng nói &quot;AI sẽ giúp&quot; — nói &quot;AI làm X, ra Y, người Z dùng&quot;.
+
+VIỆC 3 — Với MỖI hướng, chấm điểm trên 5 CÂU &quot;ĐÂY CÓ PHẢI VẤN ĐỀ AI KHÔNG&quot;:
+  1. Nút thắt thật sự là phán đoán / ngôn ngữ / tổng hợp — hay là quyết định còn thiếu / người còn thiếu / một project dọn dữ liệu / động lực sai?
+  2. Có lặp lại đủ nhiều để đáng build không? (Một lần → làm tay. Dưới 2 lần một tuần → đừng build gì cả.)
+  3. Dữ liệu/đầu vào có sẵn không — hay phải làm một project dọn dữ liệu trước? (Nếu có, ĐÓ mới là việc thật, không phải AI.)
+  4. Ai dùng kết quả, và sai có ai quan tâm không? (Khách hàng / pháp lý → bắt buộc có người kiểm → đổi cách làm.)
+  5. Claude sẽ làm CỤ THỂ cái gì ở đây — và CÁI GÌ phải để con người làm? (Nêu rõ phần phán đoán KHÔNG được tự động hóa.)
+  Rồi cho mỗi hướng một verdict: ✅ nên làm / ⚠️ làm nhưng có lưu ý / ❌ không phải vấn đề AI — sửa [X] trước / 🅿️ gác lại, chấp nhận cái giá lúc này.
+
+VIỆC 4 — NẾU một hướng là &quot;dựng môi trường AI&quot; và nó qua được 5 câu gate: ĐỪNG dừng ở &quot;dùng Claude cho việc này&quot;. Đừng nghĩ theo kiểu use case lẻ — nghĩ theo kiểu MÔI TRƯỜNG dựng một lần. Chỉ rõ 4 thứ:
+  a) BỀ MẶT — chạy ở đâu? Chọn một:
+     • Claude chat (claude.ai, web/điện thoại) — việc một lần, không build gì. NẾU không lặp lại → dừng ở đây.
+     • Claude Cowork (app desktop, mọi gói trả phí) — agentic, đọc/ghi file local + app đã kết nối (Drive, Gmail, Slack, Notion, Chrome), tự lên kế hoạch, ra file/bảng hoàn chỉnh. Không cần code. Dành cho người KHÔNG kỹ thuật. → mặc định cho phần lớn use case của sếp.
+     • Một SKILL + một MCP server — skill = quy trình lưu sẵn ai cũng gọi được; MCP server = bộ nối để Claude đọc/ghi HỆ THỐNG RIÊNG của bạn (CRM, billing, API nội bộ) y như nó đọc Drive. Build một lần (lập trình viên làm), rồi cả team dùng — kể cả người không kỹ thuật, dùng trong Cowork. → khi việc lặp lại CÙNG MỘT HÌNH DẠNG và cần chạm vào hệ thống riêng.
+     • Claude Code (terminal, máy lập trình viên) — khi việc dính tới code/repo trực tiếp, hoặc đây là nơi build skill/MCP cho người khác dùng.
+     • Routine (chạy theo lịch / theo trigger, trên cloud Anthropic) — chạy KHÔNG cần ai có mặt: theo cron, theo webhook, theo sự kiện GitHub. Build bản thủ công (Cowork hoặc skill+MCP) TRƯỚC, rồi mới bọc thành Routine.
+  b) KẾT NỐI — Claude thấy/chạm được cái gì mà KHÔNG cần dặn lại mỗi lần? (data, app, hệ thống nào)
+  c) SKILL DÙNG LẠI — quy trình là gì, lưu lại sao cho nó thành cái nút bấm chứ không phải giải thích lại mỗi lần?
+  d) RANH GIỚI — Claude tự làm phần nào, phần nào LUÔN cần người? (lấy từ câu gate 4–5)
+  Nếu chưa điền đủ 4 thứ — nói thẳng cái nào còn TBD. Đó là việc cần làm rõ tiếp theo.
+
+CUỐI CÙNG — một đoạn ngắn: bạn sẽ bắt đầu từ hướng nào, và đánh đổi khó nhất là gì. NẾU hướng mạnh nhất KHÔNG phải AI, hãy nói thẳng: &quot;Đòn bẩy lớn nhất của bạn ở đây không phải AI — mà là [X]. AI nhặt phần [Y] sau khi bạn sửa cái kia.&quot;
+
+Bắt đầu bằng câu hỏi 1. Đừng nói gì khác trước đó.</pre>
+  </details>
+
+  <footer>
+    <div>Tony Bùi · <a href="https://bnqtoan.com" target="_blank" rel="noopener">bnqtoan.com</a></div>
+    <div style="margin-top:6px">Skill nguồn: <code>/problem-frame</code> · tony-os/40-artifacts/skills/</div>
+  </footer>
+</main>
+
+<script>
+const PROMPT_TEXT = document.getElementById('promptText').textContent;
+document.getElementById('charCount').textContent = PROMPT_TEXT.length.toLocaleString() + ' ký tự';
+
+async function copyPrompt() {
+  const btn = document.getElementById('copyBtn');
+  const txt = document.getElementById('copyBtnText');
+  try {
+    await navigator.clipboard.writeText(PROMPT_TEXT);
+    btn.classList.add('copied');
+    txt.textContent = '✓ Đã copy — mở Claude và dán';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      txt.textContent = 'Copy prompt';
+    }, 3000);
+  } catch (e) {
+    // fallback: select-all in the <pre>
+    const pre = document.getElementById('promptText');
+    const r = document.createRange(); r.selectNodeContents(pre);
+    const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    txt.textContent = 'Bôi đen prompt phía dưới rồi Copy';
+    document.querySelector('details.prompt-details').open = true;
+    pre.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+</script>
+
+</body>
+</html>
